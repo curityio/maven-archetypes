@@ -32,7 +32,7 @@ public final class CustomAuthenticatorPluginDescriptor
 
     @Override
     public String getPluginImplementationType() {
-        return ${artifactId};
+        return "${artifactId}";
     }
 
     @Override
