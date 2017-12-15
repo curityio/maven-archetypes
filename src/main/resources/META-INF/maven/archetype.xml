@@ -1,0 +1,21 @@
+<archetype xmlns="http://maven.apache.org/plugins/maven-archetype-plugin/archetype/1.0.0"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://maven.apache.org/plugins/maven-archetype-plugin/archetype/1.0.0 http://maven.apache.org/xsd/archetype-1.0.0.xsd">
+    <id>curity.authenticator</id>
+
+    <sources>
+        <source>src/main/java/authentication/CustomAuthenticatorRequestHandler.java</source>
+        <source>src/main/java/authentication/CallbackGetRequestModel.java</source>
+        <source>src/main/java/authentication/CallbackRequestHandler.java</source>
+
+        <source>src/main/java/descriptor/AuthenticatorPluginDescriptor.java</source>
+        <source>src/main/java/config/AuthenticatorPluginConfig.java</source>
+    </sources>
+
+    <resources>
+        <resource>
+            src/main/resources/META-INF.services/se.curity.identityserver.sdk.plugin.descriptor.AuthenticatorPluginDescriptor
+        </resource>
+    </resources>
+
+</archetype>
