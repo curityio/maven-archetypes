@@ -16,17 +16,10 @@
         <resource>
             src/main/resources/META-INF.services/se.curity.identityserver.sdk.plugin.descriptor.AuthenticatorPluginDescriptor
         </resource>
+        <resource>.gitignore</resource>
+        <resource>deploy.sh</resource>
+        <resource>LICENSE</resource>
+        <resource>README.rst</resource>
     </resources>
-    <fileSets>
-        <fileSet filtered="true" packaged="false" encoding="UTF-8">
-            <directory/>
-            <includes>
-                <include>.gitignore</include>
-                <include>deploy.sh</include>
-                <include>LICENSE</include>
-                <include>README.rst</include>
-            </includes>
-        </fileSet>
-    </fileSets>
 
 </archetype>
