@@ -18,8 +18,8 @@
         </resource>
     </resources>
     <fileSets>
-        <fileSet encoding="UTF-8">
-            <directory></directory>
+        <fileSet filtered="true" packaged="false" encoding="UTF-8">
+            <directory/>
             <includes>
                 <include>.gitignore</include>
                 <include>deploy.sh</include>
