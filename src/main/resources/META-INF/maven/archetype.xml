@@ -8,7 +8,7 @@
         <source>src/main/java/authentication/CallbackGetRequestModel.java</source>
         <source>src/main/java/authentication/CallbackRequestHandler.java</source>
 
-        <source>src/main/java/descriptor/AuthenticatorPluginDescriptor.java</source>
+        <source>src/main/java/descriptor/CustomAuthenticatorPluginDescriptor.java</source>
         <source>src/main/java/config/AuthenticatorPluginConfig.java</source>
     </sources>
 

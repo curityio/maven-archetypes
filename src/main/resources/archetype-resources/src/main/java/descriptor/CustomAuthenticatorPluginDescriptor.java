@@ -25,7 +25,7 @@ import se.curity.identityserver.sdk.plugin.descriptor.AuthenticatorPluginDescrip
 
 import java.util.Map;
 
-public final class AuthenticatorPluginDescriptor
+public final class CustomAuthenticatorPluginDescriptor
         implements AuthenticatorPluginDescriptor<AuthenticatorPluginConfig> {
     public final static String INDEX = "index";
     public final static String CALLBACK = "callback";
