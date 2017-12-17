@@ -5,11 +5,11 @@ These project provides Maven archetypes to help you quickly create a skeleton of
 * Vanilla authenticator
 * OAuth- or OpenID-Connect-based authenticator
 
-The latter is a good one to use when creating an authenticator that communicates with an upstream OAuth or OpenID Connect provider. It includes a callback to obtain an authorization code from that provider and handles the uses the token from it to create the required ``AuthenticaitonResult``. The former is a good starting point for any other kind of authenticator.
+The latter is a good one to use when creating an authenticator that communicates with an upstream OAuth or OpenID Connect provider. It includes a callback to obtain an authorization code from that provider and handles the uses the token from it to create the required `AuthenticaitonResult`. The former is a good starting point for any other kind of authenticator.
 
 ## Install the Archetypes Locally
 
-To install these archetypes, just issue the command ``mvn install``.
+To install these archetypes, just issue the command `mvn install`.
 
 ## Generate a new Plug-in Project
 
@@ -26,7 +26,7 @@ $ mvn -B archetype:generate \
       -Dversion=1.0.0-SNAPSHOT
 ```
 
-(Substitute ``groupId``, ``artifactId`` and ``version`` values accordingly.)
+(Substitute `groupId`, `artifactId` and `version` values accordingly.)
 
 Similarly, to create a skeleton project that uses OAuth or OpenID Connect to authenticate to an upstream provider, run this command:
 
@@ -41,7 +41,7 @@ $ mvn -B archetype:generate \
       -Dversion=1.0.0-SNAPSHOT
 ```
 
-The only difference in these two is the ``archetypeArtificateId``. 
+The only difference in these two is the `archetypeArtificateId`. 
 
 ## License
 
@@ -51,7 +51,8 @@ These archetypes are licensed under the [Apache v. 2 license](LICENSE).
 
 For questions, contact Curity AB:
 
-info@curity.io
-https://curity.io
+> info@curity.io
+>
+> https://curity.io
 
 Copyright (C) 2017 Curity AB.
