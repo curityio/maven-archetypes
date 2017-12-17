@@ -3,12 +3,10 @@ ${pluginName} Authenticator Plugin
 
 ${pluginName} OAuth Authenticator plugin for the Curity Identity Server.
 
-Create `Custom app`_
-
-Create ${pluginName} Authenticator and configure the following values.
-
 Configuration
 ~~~~~~~~~~~~~
+
+Configure the upstream OAuth/OpenID Connect provider and configure a ${pluginName} Authenticator in the admin UI, CLI, etc. using the following values.
 
 +-------------------+--------------------------------------------------+-----------------------------+
 | Name              | Default                                          | Description                 |
@@ -34,44 +32,26 @@ Configuration
 |                   |                                                  | OAuth                       |
 +-------------------+--------------------------------------------------+-----------------------------+
 
-Build plugin
-~~~~~~~~~~~~
+Building the Plugin
+~~~~~~~~~~~~~~~~~~~
 
-First, collect credentials to the Curity Nexus, to be able to fetch the
-SDK. Add nexus credentials in maven settings.
+Ensure that you have obtain credentials for the Curity Nexus server, so that the SDK can be downloaded during compilation. If you do not have a credential, open a ticket in the `Curity Developer Portal <https://developer.curity.io/>`_. Once you have the credential, ensure that it is `configured in your Maven settings <https://developer.curity.io/docs/latest/developer-guide/plugins/index.html#access-to-the-curity-release-repository>`_. Then, build the plugin by issue the command ``mvn package``. This will produce a JAR file in the ``target`` directory, which can be installed.
 
-Then, build the plugin by: ``mvn clean package``
+Installing the Plugin
+~~~~~~~~~~~~~~~~~~~~~
 
-Install plugin
-~~~~~~~~~~~~~~
-
-| To install a plugin into the server, simply drop its jars and all of
-  its required resources, including Server-Provided Dependencies, in the
-  ``<plugin_group>`` directory.
-| Please visit `curity.io/plugins`_ for more information about plugin
+To install the plugin, copy the compiled JAR (and all of its dependencies) into the :file:`${IDSVR_HOME}/usr/share/plugins/${pluginGroup}` on each node, including the admin node. For more information about installing plugins, refer to the `curity.io/plugins`_.
   installation.
 
-Required dependencies/jars
-""""""""""""""""""""""""""
+Required Dependencies
+"""""""""""""""""""""
 
-Following jars must be in plugin group classpath.
+For a list of the dependencies and their versions, run ``mvn dependency:list``. Ensure that all of these are installed in the plugin group; otherwise, they will not be accessible to this plug-in and run-time errors will result.
 
--  `commons-codec-1.9.jar`_
--  `commons-logging-1.2.jar`_
--  `google-collections-1.0-rc2.jar`_
--  `httpclient-4.5.jar`_
--  `httpcore-4.4.1.jar`_
--  `identityserver.plugins.oauth.authenticators-utility-1.0.0.jar`_
+More Information
+~~~~~~~~~~~~~~~~
 
-Please visit `curity.io`_ for more information about the Curity Identity
-Server.
+Please visit `curity.io`_ for more information about the Curity Identity Server.
 
-.. _Custom app: https://app.custom.com/developers/console/newapp
 .. _curity.io/plugins: https://support.curity.io/docs/latest/developer-guide/plugins/index.html#plugin-installation
-.. _commons-codec-1.9.jar: http://central.maven.org/maven2/commons-codec/commons-codec/1.9/commons-codec-1.9.jar
-.. _commons-logging-1.2.jar: http://central.maven.org/maven2/commons-logging/commons-logging/1.2/commons-logging-1.2.jar
-.. _google-collections-1.0-rc2.jar: http://central.maven.org/maven2/com/google/collections/google-collections/1.0-rc2/google-collections-1.0-rc2.jar
-.. _httpclient-4.5.jar: http://central.maven.org/maven2/org/apache/httpcomponents/httpclient/4.5/httpclient-4.5.jar
-.. _httpcore-4.4.1.jar: http://central.maven.org/maven2/org/apache/httpcomponents/httpcore/4.4.1/httpcore-4.4.1.jar
-.. _identityserver.plugins.oauth.authenticators-utility-1.0.0.jar: https://github.com/curityio/oauth-authenticator-utility-plugin
 .. _curity.io: https://curity.io/
