@@ -8,8 +8,9 @@
         <version>1.0.0-SNAPSHOT</version>
     </parent>
 
-    <artifactId>curity.plugin.authenticator-archetype</artifactId>
+    <artifactId>curity.plugin.oauth-authenticator-archetype</artifactId>
 
     <packaging>maven-archetype</packaging>
-    <name>Curity Authenticator Archetype</name>
+    <name>Curity OAuth Authenticator Archetype</name>
+    <description>An archetype that generates the source code necessary to create an authenticator plug-in that communicates with an upstream OAuth or OpenID Connect provider</description>
 </project>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+	<groupId>io.curity</groupId>
+    <artifactId>curity.plugin.archetypes</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+    
+    <name>Curity Plug-in Archetypes</name>
+
+	<packaging>pom</packaging>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <archetypeVersion>3.0.1</archetypeVersion>
+    </properties>
+
+    <modules>
+    	<module>authenticator-archetype</module>
+    </modules>
+
+    <organization>
+    	<name>Curity AB</name>
+    	<url>https://curity.io</url>
+    </organization>
+
+    <build>
+        <extensions>
+            <extension>
+                <groupId>org.apache.maven.archetype</groupId>
+                <artifactId>archetype-packaging</artifactId>
+                <version>${archetypeVersion}</version>
+            </extension>
+        </extensions>
+
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <artifactId>maven-archetype-plugin</artifactId>
+                    <version>${archetypeVersion}</version>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
+</project>
