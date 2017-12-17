@@ -19,7 +19,7 @@ To create a simple authenticator that *does not* use OAuth or OpenID Connect, ru
 $ mvn -B archetype:generate \
       -DarchetypeArtifactId=curity.plugin.authenticator-archetype \
       -DarchetypeGroupId=io.curity \
-      -DarchetypeVersion=1.0.0-SNAPSHOT  \
+      -DarchetypeVersion=1.0.0  \
       -DartifactId=hello-world \
       -DgroupId=com.example.curity \
       -DpluginName=HelloWorld \
@@ -34,7 +34,7 @@ Similarly, to create a skeleton project that uses OAuth or OpenID Connect to aut
 $ mvn -B archetype:generate \
       -DarchetypeArtifactId=curity.plugin.oauth-authenticator-archetype \
       -DarchetypeGroupId=io.curity \
-      -DarchetypeVersion=1.0.0-SNAPSHOT  \
+      -DarchetypeVersion=1.0.0  \
       -DartifactId=hello-world \
       -DgroupId=com.example.curity \
       -DpluginName=HelloWorld \
