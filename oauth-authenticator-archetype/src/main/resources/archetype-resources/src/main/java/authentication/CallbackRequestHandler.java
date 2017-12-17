@@ -19,12 +19,11 @@ import java.util.Optional;
 import static io.curity.identityserver.plugin.authentication.Constants.Params.PARAM_ACCESS_TOKEN;
 
 public class CallbackRequestHandler
-        implements AuthenticatorRequestHandler<CallbackGetRequestModel> {
+        implements AuthenticatorRequestHandler<CallbackRequestModel> {
 
     private final ExceptionFactory _exceptionFactory;
     private final OAuthClient _oauthClient;
     private final ${pluginName}AuthenticatorPluginConfig _config;
-    private final HttpClient _client;
 
     public CallbackRequestHandler(ExceptionFactory exceptionFactory,
                                   AuthenticatorInformationProvider provider,
@@ -33,20 +32,19 @@ public class CallbackRequestHandler
         _exceptionFactory = exceptionFactory;
         _oauthClient = new DefaultOAuthClient(exceptionFactory, provider, json, config.getSessionManager());
         _config = config;
-        _client = HttpClientBuilder.create().build();
     }
 
     @Override
-    public CallbackGetRequestModel preProcess(Request request, Response response) {
+    public CallbackRequestModel preProcess(Request request, Response response) {
         if (request.isGetRequest()) {
-            return new CallbackGetRequestModel(request);
+            return new CallbackRequestModel(request);
         } else {
             throw _exceptionFactory.methodNotAllowed();
         }
     }
 
     @Override
-    public Optional<AuthenticationResult> get(CallbackGetRequestModel requestModel,
+    public Optional<AuthenticationResult> get(CallbackRequestModel requestModel,
                                               Response response) {
         _oauthClient.redirectToAuthenticationOnError(requestModel.getRequest(), _config.id());
 
@@ -56,14 +54,12 @@ public class CallbackRequestHandler
                 requestModel.getCode(),
                 requestModel.getState());
 
-        Optional<AuthenticationResult> authenticationResult = _oauthClient.getAuthenticationResult(
+        return _oauthClient.getAuthenticationResult(
             tokenMap.get(PARAM_ACCESS_TOKEN).toString(), _config.getUserInfoEndpoint().toString());
-
-        return authenticationResult;
     }
 
     @Override
-    public Optional<AuthenticationResult> post(CallbackGetRequestModel requestModel, Response response) {
+    public Optional<AuthenticationResult> post(CallbackRequestModel requestModel, Response response) {
         throw _exceptionFactory.methodNotAllowed();
     }
 }

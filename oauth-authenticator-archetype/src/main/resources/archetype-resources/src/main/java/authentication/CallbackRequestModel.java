@@ -2,12 +2,12 @@ package ${package}.authentication;
 
 import se.curity.identityserver.sdk.web.Request;
 
-class CallbackGetRequestModel {
+class CallbackRequestModel {
     private String _code;
     private String _state;
     private Request _request;
 
-    public CallbackGetRequestModel(Request request) {
+    CallbackRequestModel(Request request) {
         _code = request.getParameterValueOrError("code");
         _state = request.getParameterValueOrError("state");
         _request = request;
