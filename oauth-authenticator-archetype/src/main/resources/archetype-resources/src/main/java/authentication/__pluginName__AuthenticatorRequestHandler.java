@@ -1,6 +1,8 @@
 package ${package}.authentication;
 
 import ${package}.config.${pluginName}AuthenticatorPluginConfig;
+import com.google.common.collect.ImmutableMap;
+import io.curity.identityserver.plugin.authentication.DefaultOAuthClient;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import se.curity.identityserver.sdk.authentication.AuthenticationResult;
@@ -13,12 +15,13 @@ import se.curity.identityserver.sdk.web.Response;
 
 import java.util.Optional;
 
+import static io.curity.identityserver.plugin.authentication.Constants.Params.PARAM_REDIRECT_URI;
+
 public class ${pluginName}AuthenticatorRequestHandler implements AuthenticatorRequestHandler<RequestModel> {
     private static final Logger _logger = LoggerFactory.getLogger(${pluginName}AuthenticatorRequestHandler.class);
 
     private final ${pluginName}AuthenticatorPluginConfig _config;
-    private final AuthenticatorInformationProvider _authInfoProvider;
-    private final ExceptionFactory _exceptionFactory;
+    private final DefaultOAuthClient _oauthClient;
 
     public ${pluginName}AuthenticatorRequestHandler(${pluginName}AuthenticatorPluginConfig config,
                                                     ExceptionFactory exceptionFactory,
@@ -37,7 +40,7 @@ public class ${pluginName}AuthenticatorRequestHandler implements AuthenticatorRe
         _oauthClient.redirectToAuthorizationEndpoint(response,
                 _config.getAuthorizationEndpoint().toString(),
                 _config.getClientId(),
-                _config.getScope(), ImmutableMap.of(PARAM_REDIRECT_URI, _oauthClient.getCallbackUrl());
+                _config.getScope(), ImmutableMap.of(PARAM_REDIRECT_URI, _oauthClient.getCallbackUrl()));
 
         return Optional.empty();
     }

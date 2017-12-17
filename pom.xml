@@ -18,6 +18,7 @@
 
     <modules>
     	<module>authenticator-archetype</module>
+    	<module>oauth-authenticator-archetype</module>
     </modules>
 
     <organization>

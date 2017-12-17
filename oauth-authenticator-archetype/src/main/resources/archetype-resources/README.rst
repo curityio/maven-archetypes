@@ -1,37 +1,37 @@
 ${pluginName} Authenticator Plugin
 =============================================
 
-Custom Oauth Authenticator plugin for the Curity Identity Server.
+${pluginName} OAuth Authenticator plugin for the Curity Identity Server.
 
 Create `Custom app`_
 
-Create Box Authenticator and configure following values.
+Create ${pluginName} Authenticator and configure the following values.
 
-Config
-~~~~~~
+Configuration
+~~~~~~~~~~~~~
 
 +-------------------+--------------------------------------------------+-----------------------------+
 | Name              | Default                                          | Description                 |
 +===================+==================================================+=============================+
-| ``Client ID``     |                                                  |  OAuth app client id        |
+| ``Client ID``     |                                                  | OAuth app client id         |
 |                   |                                                  |                             |
 +-------------------+--------------------------------------------------+-----------------------------+
 | ``Client Secret`` |                                                  | OAuth app secret key        |
 |                   |                                                  |                             |
 +-------------------+--------------------------------------------------+-----------------------------+
-| ``Authorization`` | https://account.custom.com/api/oauth2/authorize  | URL to the OAuth            |
+| ``Authorization`` | ``https://identity.example.com/authorize``       | URL to the OAuth            |
 | ``Endpoint``      |                                                  | authorization endpoint      |
 |                   |                                                  |                             |
 +-------------------+--------------------------------------------------+-----------------------------+
-| ``Token``         | https://api.custom.com/oauth2/token              | URL to the OAuth            |
+| ``Token``         | ``https://identity.example.com/token``           | URL to the OAuth            |
 | ``Endpoint``      |                                                  | token endpoint              |
 +-------------------+--------------------------------------------------+-----------------------------+
-| ``UserInfo``      | https://api.custom.com/2.0/users/me              | URL to the OAuth            |
+| ``UserInfo``      | ``https://identity.example.com/user-info``       | URL to the OpenID Connect   |
 | ``Endpoint``      |                                                  | userinfo endpoint           |
 +-------------------+--------------------------------------------------+-----------------------------+
-| ``Scope``         |                                                  | A space-separated list of   |
+| ``Scope``         | ``""``                                           | A space-separated list of   |
 |                   |                                                  | scopes to request from      |
-|                   |                                                  | OAuth                         |
+|                   |                                                  | OAuth                       |
 +-------------------+--------------------------------------------------+-----------------------------+
 
 Build plugin

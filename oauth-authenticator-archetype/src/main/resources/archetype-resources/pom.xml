@@ -47,6 +47,11 @@
             <artifactId>guava</artifactId>
             <version>23.5-jre</version>
         </dependency>
+        <dependency>
+            <groupId>io.curity.identityserver.plugin</groupId>
+            <artifactId>identityserver.plugins.oauth.authenticators-utility</artifactId>
+            <version>1.0.0</version>
+        </dependency>
     </dependencies>
 
     <repositories>

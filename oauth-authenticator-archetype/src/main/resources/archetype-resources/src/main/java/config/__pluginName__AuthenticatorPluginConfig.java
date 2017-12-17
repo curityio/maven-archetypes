@@ -11,5 +11,27 @@ import java.net.URI;
 @SuppressWarnings("InterfaceNeverImplemented")
 public interface ${pluginName}AuthenticatorPluginConfig extends Configuration {
 
+	@Description("Client id")
+    String getClientId();
+
+    @Description("Secret key")
+    String getClientSecret();
+
+    @Description("URL to the upstream OAuth server's authorization endpoint")
+    @DefaultURI("https://identity.example.com/authorize")
+    URI getAuthorizationEndpoint();
+
+    @Description("URL to the upstream OAuth server's token endpoint")
+    @DefaultURI("https://identity.example.com/token")
+    URI getTokenEndpoint();
+
+    @Description("URL to upstream OpenID Connect Provider's user info endpoint")
+    @DefaultURI("https://identity.example.com/user-info")
+    URI getUserInfoEndpoint();
+
+    @Description("A space-separated list of scopes to request from Custom")
+    @DefaultString("")
+    String getScope();
+
     SessionManager getSessionManager();
 }
