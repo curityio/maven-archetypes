@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>${groupId}</groupId>
+    <artifactId>${artifactId}</artifactId>
+    <version>${version}</version>
+    <packaging>jar</packaging>
+
+    <name>Curity ${pluginName} Authenticator</name>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.curityVersion>2.3.0</project.curityVersion>
+        <project.slf4jVersion>1.7.22</project.slf4jVersion>
+    </properties>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.1</version>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <dependencies>
+        <dependency>
+            <groupId>se.curity.identityserver</groupId>
+            <artifactId>identityserver.sdk</artifactId>
+            <version>${project.curityVersion}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>${project.slf4jVersion}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>23.5-jre</version>
+        </dependency>
+    </dependencies>
+
+    <distributionManagement>
+        <repository>
+            <id>curity-release-repo</id>
+            <name>Curity Nexus Release Repository</name>
+            <url>https://nexus.curity.se/nexus/content/repositories/customer-release-repo/</url>
+        </repository>
+    </distributionManagement>
+
+    <repositories>
+        <repository>
+            <id>customer-release-repo</id>
+            <url>https://nexus.curity.se/nexus/content/repositories/customer-release-repo</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
+</project>

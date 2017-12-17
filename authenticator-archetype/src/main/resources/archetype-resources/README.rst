@@ -1,5 +1,5 @@
-Custom Authenticator Plugin
-========================
+${pluginName} Authenticator Plugin
+=============================================
 
 Custom Oauth Authenticator plugin for the Curity Identity Server.
 
