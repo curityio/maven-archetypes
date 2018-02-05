@@ -12,6 +12,7 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.curityVersion>${curitySdkVersion}</project.curityVersion>
     </properties>
 
     <build>
@@ -32,7 +33,7 @@
         <dependency>
             <groupId>se.curity.identityserver</groupId>
             <artifactId>identityserver.sdk</artifactId>
-            <version>3.0.0-SNAPSHOT</version>
+            <version>${project.curityVersion}</version>
         </dependency>
         <dependency>
             <groupId>org.slf4j</groupId>

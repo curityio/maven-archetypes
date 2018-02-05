@@ -9,7 +9,7 @@ This project provides an opens source ${pluginName} Authenticator plug-in for th
 System Requirements
 ~~~~~~~~~~~~~~~~~~~
 
-* Curity Identity Server 3.0.0 and `its system requirements <https://developer.curity.io/docs/latest/system-admin-guide/system-requirements.html>`_
+* Curity Identity Server 2.4.0 and `its system requirements <https://developer.curity.io/docs/latest/system-admin-guide/system-requirements.html>`_
 
 Requirements for Building from Source
 """""""""""""""""""""""""""""""""""""
@@ -51,9 +51,6 @@ As `described in the ${pluginName} documentation <https://developer.${artifactId
         :width: 500px
 
     Fill in all the required information as shown in above image.
-
-
-
 
 When you view the app's configuration after creating it, you'll find the ``Client ID`` and ``Client Secret``. These will be needed later when configuring the plug-in in Curity.
 
@@ -134,4 +131,4 @@ More Information
 
 Please visit `curity.io <https://curity.io/>`_ for more information about the Curity Identity Server.
 
-Copyright (C) 2017 Curity AB.
+Copyright (C) 2018 Curity AB.
