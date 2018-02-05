@@ -1,12 +1,16 @@
 package ${package}.config;
 
-import se.curity.identityserver.sdk.config.Configuration;
-import se.curity.identityserver.sdk.config.annotation.DefaultString;
-import se.curity.identityserver.sdk.config.annotation.DefaultURI;
-import se.curity.identityserver.sdk.config.annotation.Description;
-import se.curity.identityserver.sdk.service.SessionManager;
 
-import java.net.URI;
+import se.curity.identityserver.sdk.config.Configuration;
+import se.curity.identityserver.sdk.config.annotation.Description;
+import se.curity.identityserver.sdk.service.ExceptionFactory;
+import se.curity.identityserver.sdk.service.HttpClient;
+import se.curity.identityserver.sdk.service.Json;
+import se.curity.identityserver.sdk.service.SessionManager;
+import se.curity.identityserver.sdk.service.WebServiceClientFactory;
+import se.curity.identityserver.sdk.service.authentication.AuthenticatorInformationProvider;
+
+import java.util.Optional;
 
 @SuppressWarnings("InterfaceNeverImplemented")
 public interface ${pluginName}AuthenticatorPluginConfig extends Configuration {
@@ -17,21 +21,16 @@ public interface ${pluginName}AuthenticatorPluginConfig extends Configuration {
     @Description("Secret key")
     String getClientSecret();
 
-    @Description("URL to the upstream OAuth server's authorization endpoint")
-    @DefaultURI("https://identity.example.com/authorize")
-    URI getAuthorizationEndpoint();
-
-    @Description("URL to the upstream OAuth server's token endpoint")
-    @DefaultURI("https://identity.example.com/token")
-    URI getTokenEndpoint();
-
-    @Description("URL to upstream OpenID Connect Provider's user info endpoint")
-    @DefaultURI("https://identity.example.com/user-info")
-    URI getUserInfoEndpoint();
-
-    @Description("A space-separated list of scopes to request from Custom")
-    @DefaultString("")
-    String getScope();
+    @Description("The HTTP client with any proxy and TLS settings that will be used to connect to LinkedIn")
+    Optional<HttpClient> getHttpClient();
 
     SessionManager getSessionManager();
+
+    ExceptionFactory getExceptionFactory();
+
+    AuthenticatorInformationProvider getAuthenticatorInformationProvider();
+
+    WebServiceClientFactory getWebServiceClientFactory();
+
+    Json getJson();
 }

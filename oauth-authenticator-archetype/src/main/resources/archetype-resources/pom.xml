@@ -7,14 +7,11 @@
     <groupId>${groupId}</groupId>
     <artifactId>${artifactId}</artifactId>
     <version>${version}</version>
-    <packaging>jar</packaging>
 
     <name>Curity ${pluginName} Authenticator</name>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <project.curityVersion>${curitySdkVersion}</project.curityVersion>
-        <project.slf4jVersion>1.7.22</project.slf4jVersion>
     </properties>
 
     <build>
@@ -35,22 +32,12 @@
         <dependency>
             <groupId>se.curity.identityserver</groupId>
             <artifactId>identityserver.sdk</artifactId>
-            <version>${project.curityVersion}</version>
+            <version>3.0.0-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-api</artifactId>
-            <version>${project.slf4jVersion}</version>
-        </dependency>
-        <dependency>
-            <groupId>com.google.guava</groupId>
-            <artifactId>guava</artifactId>
-            <version>23.5-jre</version>
-        </dependency>
-        <dependency>
-            <groupId>io.curity.identityserver.plugin</groupId>
-            <artifactId>identityserver.plugins.oauth.authenticators-utility</artifactId>
-            <version>1.0.0</version>
+            <version>1.7.22</version>
         </dependency>
     </dependencies>
 
@@ -61,6 +48,14 @@
             <snapshots>
                 <enabled>false</enabled>
             </snapshots>
+        </repository>
+        <repository>
+            <id>customer-snapshot-repo</id>
+            <name>Customer Snapshot Repository</name>
+            <url>https://nexus.curity.se/nexus/content/repositories/customer-snapshot-repo/</url>
+            <releases>
+                <enabled>false</enabled>
+            </releases>
         </repository>
     </repositories>
 </project>

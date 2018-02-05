@@ -1,15 +1,18 @@
 package ${package}.descriptor;
 
-import com.google.common.collect.ImmutableMap;
 import ${package}.authentication.CallbackRequestHandler;
 import ${package}.authentication.${pluginName}AuthenticatorRequestHandler;
 import ${package}.config.${pluginName}AuthenticatorPluginConfig;
 import se.curity.identityserver.sdk.authentication.AuthenticatorRequestHandler;
 import se.curity.identityserver.sdk.plugin.descriptor.AuthenticatorPluginDescriptor;
 
+import java.util.Collections;
+import java.util.LinkedHashMap;
 import java.util.Map;
 
 public final class ${pluginName}AuthenticatorPluginDescriptor implements AuthenticatorPluginDescriptor<${pluginName}AuthenticatorPluginConfig> {
+
+    public final static String CALLBACK = "callback";
 
     @Override
     public String getPluginImplementationType() {
@@ -23,9 +26,10 @@ public final class ${pluginName}AuthenticatorPluginDescriptor implements Authent
 
     @Override
     public Map<String, Class<? extends AuthenticatorRequestHandler<?>>> getAuthenticationRequestHandlerTypes() {
-        return ImmutableMap.of(
-            "index", ${pluginName}AuthenticatorRequestHandler.class,
-            "callback", CallbackRequestHandler.class
-        );
+        Map<String, Class<? extends AuthenticatorRequestHandler<?>>> handlers = new LinkedHashMap<>(2);
+        handlers.put("index", ${pluginName}AuthenticatorRequestHandler.class);
+        handlers.put(CALLBACK, CallbackRequestHandler.class);
+
+        return Collections.unmodifiableMap(handlers);
     }
 }
