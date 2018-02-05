@@ -8,7 +8,7 @@
         <version>1.0.2</version>
     </parent>
 
-    <artifactId>curity.plugin.kotlin-authenticator-archetype</artifactId>
+    <artifactId>curity.plugin.archetype.kotlin-authenticator</artifactId>
 
     <packaging>maven-archetype</packaging>
     <name>Curity Kotlin Authenticator Archetype</name>
