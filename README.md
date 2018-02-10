@@ -18,9 +18,9 @@ To create a simple authenticator that *does not* use OAuth or OpenID Connect, ru
 
 ```bash
 $ mvn -B archetype:generate \
-      -DarchetypeArtifactId=curity.plugin.authenticator-archetype \
+      -DarchetypeArtifactId=identityserver.plugins.archetypes.authenticator \
       -DarchetypeGroupId=io.curity \
-      -DarchetypeVersion=1.0.2  \
+      -DarchetypeVersion=1.1.0  \
       -DartifactId=hello-world \
       -DgroupId=com.example.curity \
       -DpluginName=HelloWorld \
@@ -33,16 +33,16 @@ Similarly, to create a skeleton project that uses OAuth or OpenID Connect to aut
 
 ```bash
 $ mvn -B archetype:generate \
-      -DarchetypeArtifactId=curity.plugin.oauth-authenticator-archetype \
+      -DarchetypeArtifactId=identityserver.plugins.archetypes.oauth-authenticator \
       -DarchetypeGroupId=io.curity \
-      -DarchetypeVersion=1.0.2  \
+      -DarchetypeVersion=1.1.0  \
       -DartifactId=hello-world \
       -DgroupId=com.example.curity \
       -DpluginName=HelloWorld \
       -Dversion=1.0.0-SNAPSHOT
 ```
 
-The only difference in these two is the `archetypeArtificateId`. Similar to these, change the `archetypeArtificatId` to `curity.plugin.kotlin-authenticator-archetype` to generate an authenticator that uses Kotlin.
+The only difference in these two is the `archetypeArtificateId`. Similar to these, change the `archetypeArtificatId` to `identityserver.plugins.archetypes.kotlin-authenticator` to generate an authenticator that uses Kotlin.
 
 ## License
 
