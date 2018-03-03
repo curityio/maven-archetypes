@@ -12,7 +12,7 @@ public final class ${pluginName}AuthenticatorPluginDescriptor implements Authent
 
     @Override
     public String getPluginImplementationType() {
-        return "${artifactId}";
+        return "${pluginName.toLowerCase()}";
     }
 
     @Override

@@ -13,5 +13,5 @@ class ${pluginName}AuthenticatorPluginDescriptor : AuthenticatorPluginDescriptor
     override fun getConfigurationType(): Class<out ${pluginName}AuthenticatorPluginConfig> =
         ${pluginName}AuthenticatorPluginConfig::class.java
     
-    override fun getPluginImplementationType(): String = "${artifactId}"
+    override fun getPluginImplementationType(): String = "${pluginName.toLowerCase()}"
 }
