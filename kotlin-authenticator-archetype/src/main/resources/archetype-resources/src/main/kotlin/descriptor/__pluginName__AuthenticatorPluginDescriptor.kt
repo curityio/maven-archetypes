@@ -1,7 +1,7 @@
 package ${package}.descriptor
 
-import io.curity.identityserver.plugin.signicat.authentication.${pluginName}AuthenticatorRequestHandler
-import io.curity.identityserver.plugin.signicat.config.${pluginName}AuthenticatorPluginConfig
+import ${package}.authentication.${pluginName}AuthenticatorRequestHandler
+import ${package}.config.${pluginName}AuthenticatorPluginConfig
 import se.curity.identityserver.sdk.authentication.AuthenticatorRequestHandler
 import se.curity.identityserver.sdk.plugin.descriptor.AuthenticatorPluginDescriptor
 

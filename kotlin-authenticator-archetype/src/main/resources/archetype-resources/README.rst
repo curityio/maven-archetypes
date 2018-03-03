@@ -6,12 +6,12 @@ A custom, Kotlin-based authenticator plugin for the Curity Identity Server.
 Building the Plugin
 ~~~~~~~~~~~~~~~~~~~
 
-Ensure that you have obtain credentials for the Curity Nexus server, so that the SDK can be downloaded during compilation. If you do not have a credential, open a ticket in the `Curity Developer Portal <https://developer.curity.io/>`_. Once you have the credential, ensure that it is `configured in your Maven settings <https://developer.curity.io/docs/latest/developer-guide/plugins/index.html#access-to-the-curity-release-repository>`_. Then, build the plugin by issue the command ``mvn package``. This will produce a JAR file in the ``target`` directory, which can be installed.
+You can build the plugin by issue the command ``mvn package``. This will produce a JAR file in the ``target`` directory, which can be installed.
 
 Installing the Plugin
 ~~~~~~~~~~~~~~~~~~~~~
 
-To install the plugin, copy the compiled JAR (and all of its dependencies) into the :file:`${IDSVR_HOME}/usr/share/plugins/${pluginGroup}` on each node, including the admin node. For more information about installing plugins, refer to the `curity.io/plugins`_.
+To install the plugin, copy the compiled JAR (and all of its dependencies) into the ``${IDSVR_HOME}/usr/share/plugins/${pluginGroup}`` on each node, including the admin node. For more information about installing plugins, refer to the `curity.io/plugins`_.
 
 Required Dependencies
 """""""""""""""""""""
