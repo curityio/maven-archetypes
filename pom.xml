@@ -50,12 +50,7 @@
         <repository>
             <id>customer-release-repo</id>
             <name>Customer Release Repository</name>
-            <url>https://nexus.curity.se/nexus/content/repositories/customer-release-repo/</url>
+            <url>https://nexus.curity.se/repository/customer-release-repo</url>
         </repository>
-        <snapshotRepository>
-            <id>curity-snapshot-repo</id>
-            <name>Curity Nexus Snapshot Repository</name>
-            <url>https://nexus.curity.se/nexus/content/repositories/customer-snapshot-repo/</url>
-        </snapshotRepository>
     </distributionManagement>
 </project>
