@@ -5,11 +5,12 @@
     <parent>
         <groupId>io.curity</groupId>
         <artifactId>identityserver.plugins.archetypes</artifactId>
-        <version>1.3.0</version>
+        <version>1.3.1</version>
     </parent>
 
     <artifactId>identityserver.plugins.archetypes.authenticator</artifactId>
 
     <packaging>maven-archetype</packaging>
     <name>Curity Authenticator Archetype</name>
+    <description>An archetype that generates the source code necessary to create an authenticator plug-in</description>
 </project>

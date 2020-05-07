@@ -5,9 +5,30 @@
 
     <groupId>io.curity</groupId>
     <artifactId>identityserver.plugins.archetypes</artifactId>
-    <version>1.3.0</version>
+    <version>1.3.1</version>
     
     <name>Curity Plug-in Archetypes</name>
+    <description>Archetypes that can generate code for the various kinds of plug-ins supported by the Curity Identity Server</description>
+    <url>https://github.com/curityio/authenticator-maven-archetype</url>
+    <licenses>
+        <license>
+            <name>The Apache License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+        </license>
+    </licenses>
+    <developers>
+        <developer>
+            <name>Travis Spencer</name>
+            <email>travis.spencer@curity.io</email>
+            <organization>Curity AB</organization>
+            <organizationUrl>https://curity.io</organizationUrl>
+        </developer>
+    </developers>
+    <scm>
+        <connection>scm:git:git://github.com/curityio/authenticator-maven-archetype.git</connection>
+        <developerConnection>scm:git:ssh://github.com:curityio/authenticator-maven-archetype.git</developerConnection>
+        <url>https://github.com/curityio/authenticator-maven-archetype/tree/master</url>
+    </scm>
 
     <packaging>pom</packaging>
 
@@ -28,6 +49,34 @@
     </organization>
 
     <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-gpg-plugin</artifactId>
+                <version>1.6</version>
+                <executions>
+                    <execution>
+                        <id>sign-artifacts</id>
+                        <phase>verify</phase>
+                        <goals>
+                            <goal>sign</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.sonatype.plugins</groupId>
+                <artifactId>nexus-staging-maven-plugin</artifactId>
+                <version>1.6.8</version>
+                <extensions>false</extensions>
+                <configuration>
+                    <serverId>ossrh</serverId>
+                    <nexusUrl>https://oss.sonatype.org/</nexusUrl>
+                    <autoReleaseAfterClose>true</autoReleaseAfterClose>
+                </configuration>
+            </plugin>
+        </plugins>
+
         <extensions>
             <extension>
                 <groupId>org.apache.maven.archetype</groupId>
@@ -47,10 +96,13 @@
     </build>
 
     <distributionManagement>
+        <snapshotRepository>
+            <id>ossrh</id>
+            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+        </snapshotRepository>
         <repository>
-            <id>customer-release-repo</id>
-            <name>Customer Release Repository</name>
-            <url>https://nexus.curity.se/repository/customer-release-repo</url>
+            <id>ossrh</id>
+            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
         </repository>
     </distributionManagement>
 </project>
