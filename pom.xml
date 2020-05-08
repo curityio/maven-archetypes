@@ -40,7 +40,8 @@
     <modules>
         <module>authenticator-archetype</module>
         <module>oauth-authenticator-archetype</module>
-        <module>kotlin-authenticator-archetype</module>        
+        <module>kotlin-authenticator-archetype</module>
+        <module>authentication-action-archetype</module>
     </modules>
 
     <organization>
