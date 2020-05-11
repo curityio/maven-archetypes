@@ -13,7 +13,7 @@ import se.curity.identityserver.sdk.datasource.UserAccountDataAccessProvider;
 import java.util.Collection;
 import java.util.Map;
 
-public class ${pluginName}UserAccountDataAccessProvider implements UserAccountDataAccessProvider
+public final class ${pluginName}UserAccountDataAccessProvider implements UserAccountDataAccessProvider
 {
     private static final Logger _logger = LoggerFactory.getLogger(${pluginName}CredentialDataAccessProvider.class);
 
@@ -86,7 +86,7 @@ public class ${pluginName}UserAccountDataAccessProvider implements UserAccountDa
     @Override
     public Collection<LinkedAccount> listLinks(String linkingAccountManager, String localAccountId)
     {
-        throw new UnsupportedOperationException);
+        throw new UnsupportedOperationException();
     }
 
     @Override

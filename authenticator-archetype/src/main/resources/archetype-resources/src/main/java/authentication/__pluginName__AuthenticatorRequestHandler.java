@@ -13,7 +13,7 @@ import se.curity.identityserver.sdk.web.Response;
 
 import java.util.Optional;
 
-public class ${pluginName}AuthenticatorRequestHandler implements AuthenticatorRequestHandler<RequestModel> {
+public final class ${pluginName}AuthenticatorRequestHandler implements AuthenticatorRequestHandler<RequestModel> {
     private static final Logger _logger = LoggerFactory.getLogger(${pluginName}AuthenticatorRequestHandler.class);
 
     private final ${pluginName}AuthenticatorPluginConfig _config;

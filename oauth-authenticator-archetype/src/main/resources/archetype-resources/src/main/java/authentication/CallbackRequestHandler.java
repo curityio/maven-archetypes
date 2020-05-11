@@ -34,7 +34,7 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.Optional;
 
-public class CallbackRequestHandler implements AuthenticatorRequestHandler<CallbackRequestModel>
+public final class CallbackRequestHandler implements AuthenticatorRequestHandler<CallbackRequestModel>
 {
     private final static Logger _logger = LoggerFactory.getLogger(CallbackRequestHandler.class);
 

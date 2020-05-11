@@ -27,7 +27,7 @@ import java.util.UUID;
 
 import static ${package}.descriptor.${pluginName}AuthenticatorPluginDescriptor.CALLBACK;
 
-public class ${pluginName}AuthenticatorRequestHandler implements AuthenticatorRequestHandler<Request>
+public final class ${pluginName}AuthenticatorRequestHandler implements AuthenticatorRequestHandler<Request>
 {
     private static final Logger _logger = LoggerFactory.getLogger(${pluginName}AuthenticatorRequestHandler.class);
     private static final String AUTHORIZATION_ENDPOINT = "";

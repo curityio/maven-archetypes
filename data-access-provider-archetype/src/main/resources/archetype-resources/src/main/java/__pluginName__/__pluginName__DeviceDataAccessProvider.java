@@ -10,7 +10,7 @@ import se.curity.identityserver.sdk.datasource.DeviceDataAccessProvider;
 
 import java.util.List;
 
-public class ${pluginName}DeviceDataAccessProvider implements DeviceDataAccessProvider
+public final class ${pluginName}DeviceDataAccessProvider implements DeviceDataAccessProvider
 {
     private static final Logger _logger = LoggerFactory.getLogger(${pluginName}CredentialDataAccessProvider.class);
 

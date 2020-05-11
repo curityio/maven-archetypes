@@ -29,7 +29,7 @@ public final class ${pluginName}EventListenerDescriptor implements EventListener
         return ${pluginName}EventListenerConfig.class;
     }
 
-    public static class ${pluginName}ListenerCollection implements EventListenerCollection
+    public static final class ${pluginName}ListenerCollection implements EventListenerCollection
     {
         private final Set<EventListener<?>> _listeners;
 

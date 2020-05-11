@@ -7,7 +7,7 @@ import se.curity.identityserver.sdk.attribute.AccountAttributes;
 import se.curity.identityserver.sdk.attribute.AuthenticationAttributes;
 import se.curity.identityserver.sdk.datasource.CredentialDataAccessProvider;
 
-public class ${pluginName}CredentialDataAccessProvider implements CredentialDataAccessProvider
+public final class ${pluginName}CredentialDataAccessProvider implements CredentialDataAccessProvider
 {
     private static final Logger _logger = LoggerFactory.getLogger(${pluginName}CredentialDataAccessProvider.class);
 

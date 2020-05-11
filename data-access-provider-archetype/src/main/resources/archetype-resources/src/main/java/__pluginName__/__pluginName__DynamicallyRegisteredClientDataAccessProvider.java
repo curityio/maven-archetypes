@@ -5,7 +5,7 @@ import org.slf4j.LoggerFactory;
 import se.curity.identityserver.sdk.attribute.scim.v2.extensions.DynamicallyRegisteredClientAttributes;
 import se.curity.identityserver.sdk.datasource.DynamicallyRegisteredClientDataAccessProvider;
 
-public class ${pluginName}DynamicallyRegisteredClientDataAccessProvider implements DynamicallyRegisteredClientDataAccessProvider
+public final class ${pluginName}DynamicallyRegisteredClientDataAccessProvider implements DynamicallyRegisteredClientDataAccessProvider
 {
     private static final Logger _logger = LoggerFactory.getLogger(${pluginName}CredentialDataAccessProvider.class);
 

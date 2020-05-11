@@ -10,7 +10,7 @@ public final class ${pluginName}AuthenticationAction implements AuthenticationAc
 {
     private final ${pluginName}AuthenticationActionConfig _configuration;
 
-    public ${pluginName}AuthenticationAction(${pluginName}AuthenticationActionConfig _configuration)
+    public ${pluginName}AuthenticationAction(${pluginName}AuthenticationActionConfig configuration)
     {
         _configuration = configuration;
     }

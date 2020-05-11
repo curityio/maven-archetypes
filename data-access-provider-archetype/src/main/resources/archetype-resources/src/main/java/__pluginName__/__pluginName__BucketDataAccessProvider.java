@@ -6,7 +6,7 @@ import se.curity.identityserver.sdk.datasource.BucketDataAccessProvider;
 
 import java.util.Map;
 
-public class ${pluginName}BucketDataAccessProvider implements BucketDataAccessProvider
+public final class ${pluginName}BucketDataAccessProvider implements BucketDataAccessProvider
 {
     private static final Logger _logger = LoggerFactory.getLogger(${pluginName}CredentialDataAccessProvider.class);
 
