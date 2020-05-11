@@ -3,13 +3,28 @@
 [![Quality](https://curity.io/assets/images/badges/authenticator-maven-archetype-quality.svg)](https://curity.io/resources/code-examples/status/)
 [![Availability](https://curity.io/assets/images/badges/authenticator-maven-archetype-availability.svg)](https://curity.io/resources/code-examples/status/)
 
-These project provides Maven archetypes to help you quickly create a skeleton of a plug-in that can be used with the Curity Identity Server. Currently, the following archetypes are available:
+This project provides Maven archetypes to help you quickly create a skeleton of a plug-in which can be used with the Curity
+Identity Server. Currently, the following archetypes are available:
 
-* Vanilla authenticator
-* A Kotlin-based authenticator
-* OAuth- or OpenID-Connect-based authenticator
+* Authenticator:
+    * Vanilla
+    * Kotlin-based
+    * OAuth- or OpenID-Connect-based
+* Authentication Action
+* Claims Provider
+* Consentor:
+    * Consentor-based
+    * Signing Consentor-based
+* Data Access Provider
+* Email Sender
+* Event Listener
+* SMS Sender
 
-The latter is a good one to use when creating an authenticator that communicates with an upstream OAuth or OpenID Connect provider. It includes a callback to obtain an authorization code from that provider and handles the uses the token from it to create the required `AuthenticaitonResult`. The first is a good starting point for any other kind of authenticator. The Kotlin one is a good one to use if you'd like to program in that language.
+The `oauth-authenticator-archetype` is a good one to use when creating an authenticator that communicates with an upstream
+OAuth or OpenID Connect provider. It includes a callback to obtain an authorization code from that provider and uses the
+code to obtain a token from it to create the required `AuthenticaitonResult`. The `authentication-action-archetype` is a
+good starting point for any other kind of authenticator. The Kotlin one is a good one to use if you'd like to program in
+that language.
 
 ## Install the Archetypes Locally
 
@@ -23,7 +38,7 @@ To create a simple authenticator that *does not* use OAuth or OpenID Connect, ru
 $ mvn -B archetype:generate \
       -DarchetypeArtifactId=identityserver.plugins.archetypes.authenticator \
       -DarchetypeGroupId=io.curity \
-      -DarchetypeVersion=1.3.0  \
+      -DarchetypeVersion=1.3.1  \
       -DartifactId=hello-world \
       -DgroupId=com.example.curity \
       -DpluginName=HelloWorld \
@@ -38,20 +53,23 @@ Similarly, to create a skeleton project that uses OAuth or OpenID Connect to aut
 $ mvn -B archetype:generate \
       -DarchetypeArtifactId=identityserver.plugins.archetypes.oauth-authenticator \
       -DarchetypeGroupId=io.curity \
-      -DarchetypeVersion=1.3.0  \
+      -DarchetypeVersion=1.3.1  \
       -DartifactId=hello-world \
       -DgroupId=com.example.curity \
       -DpluginName=HelloWorld \
       -Dversion=1.0.0-SNAPSHOT
 ```
 
-The only difference in these two is the `archetypeArtificateId`. Similar to these, change the `archetypeArtificatId` to `identityserver.plugins.archetypes.kotlin-authenticator` to generate an authenticator that uses Kotlin like this:
+The only difference in these two, is the `archetypeArtifactId`. Change the `archetypeArtifactId` to any other value to
+create an appropriate plugin. You can find the artifact IDs in the `pom.xml` file of each of the archetype.
+
+E.g. to create the Event Listener plugin, use this command:
 
 ```bash
 $ mvn -B archetype:generate \
-      -DarchetypeArtifactId=identityserver.plugins.archetypes.kotlin-authenticator \
+      -DarchetypeArtifactId=identityserver.plugins.archetypes.event-listener \
       -DarchetypeGroupId=io.curity \
-      -DarchetypeVersion=1.3.0 \
+      -DarchetypeVersion=1.3.1 \
       -DartifactId=hello-world \
       -DgroupId=com.example.curity \
       -DpluginName=HelloWorld \

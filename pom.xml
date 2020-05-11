@@ -42,7 +42,14 @@
         <module>oauth-authenticator-archetype</module>
         <module>kotlin-authenticator-archetype</module>
         <module>authentication-action-archetype</module>
-    </modules>
+        <module>data-access-provider-archetype</module>
+        <module>sms-sender-archetype</module>
+        <module>email-sender-archetype</module>
+        <module>event-listener-archetype</module>
+        <module>signing-consentor-archetype</module>
+        <module>consentor-archetype</module>
+        <module>claims-provider-archetype</module>
+  </modules>
 
     <organization>
         <name>Curity AB</name>
