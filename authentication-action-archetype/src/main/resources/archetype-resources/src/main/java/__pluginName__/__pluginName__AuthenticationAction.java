@@ -20,7 +20,7 @@ public final class ${pluginName}AuthenticationAction implements AuthenticationAc
                                             String authenticationTransactionId,
                                             AuthenticatorDescriptor authenticatorDescriptor) {
 
-        // Have a look at this example: https://curity.io/resources/tutorials/code-examples/webauthn-authenticator/
+        // Have a look at this example: https://github.com/curityio/time-authentication-action
         // to see what you can do in a plugin. If you prefer going straight to the docs, here's a link:
         // https://developer.curity.io/docs/latest/developer-guide/plugins/index.html
 
