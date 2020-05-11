@@ -7,12 +7,14 @@
     <groupId>${groupId}</groupId>
     <artifactId>${artifactId}</artifactId>
     <version>${version}</version>
+    <packaging>jar</packaging>
 
-    <name>Curity ${pluginName} Authenticator</name>
+    <name>Curity ${pluginName} Authentication Action</name>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.curityVersion>${curitySdkVersion}</project.curityVersion>
+        <project.slf4jVersion>1.7.22</project.slf4jVersion>
     </properties>
 
     <build>
@@ -39,7 +41,7 @@
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-api</artifactId>
-            <version>1.7.22</version>
+            <version>${project.slf4jVersion}</version>
             <scope>provided</scope>
         </dependency>
     </dependencies>
@@ -51,14 +53,6 @@
             <snapshots>
                 <enabled>false</enabled>
             </snapshots>
-        </repository>
-        <repository>
-            <id>customer-snapshot-repo</id>
-            <name>Customer Snapshot Repository</name>
-            <url>https://nexus.curity.se/nexus/content/repositories/customer-snapshot-repo/</url>
-            <releases>
-                <enabled>false</enabled>
-            </releases>
         </repository>
     </repositories>
 </project>
