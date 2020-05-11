@@ -8,8 +8,8 @@ import se.curity.identityserver.sdk.datasource.DynamicallyRegisteredClientDataAc
 import se.curity.identityserver.sdk.datasource.UserAccountDataAccessProvider;
 import se.curity.identityserver.sdk.plugin.descriptor.DataAccessProviderPluginDescriptor;
 
-public final class ${pluginName}DataAccessProviderDescriptor implements DataAccessProviderPluginDescriptor<${pluginName}DataAccessProviderConfig> {
-
+public final class ${pluginName}DataAccessProviderDescriptor implements DataAccessProviderPluginDescriptor<${pluginName}DataAccessProviderConfig>
+{
     @Override
     public String getPluginImplementationType()
     {

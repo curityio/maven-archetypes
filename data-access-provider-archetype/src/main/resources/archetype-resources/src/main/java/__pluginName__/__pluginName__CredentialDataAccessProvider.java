@@ -6,7 +6,6 @@ import se.curity.identityserver.sdk.Nullable;
 import se.curity.identityserver.sdk.attribute.AccountAttributes;
 import se.curity.identityserver.sdk.attribute.AuthenticationAttributes;
 import se.curity.identityserver.sdk.datasource.CredentialDataAccessProvider;
-import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 public class ${pluginName}CredentialDataAccessProvider implements CredentialDataAccessProvider
 {
@@ -24,7 +23,7 @@ public class ${pluginName}CredentialDataAccessProvider implements CredentialData
     public void updatePassword(AccountAttributes accountAttributes)
     {
         _logger.debug("Received request to update password for username : {}", accountAttributes.getUserName());
-        throw new NotImplementedException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -33,13 +32,12 @@ public class ${pluginName}CredentialDataAccessProvider implements CredentialData
     {
         _logger.debug("Received request to verify password for username : {}", userName);
 
-        throw new NotImplementedException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public boolean customQueryVerifiesPassword()
     {
-        throw new NotImplementedException();
+        throw new UnsupportedOperationException();
     }
-
 }

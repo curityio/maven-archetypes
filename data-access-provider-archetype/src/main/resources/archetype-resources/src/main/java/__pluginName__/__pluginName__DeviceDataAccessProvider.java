@@ -7,7 +7,6 @@ import se.curity.identityserver.sdk.attribute.scim.v2.extensions.DeviceAttribute
 import se.curity.identityserver.sdk.data.query.ResourceQuery;
 import se.curity.identityserver.sdk.data.query.ResourceQueryResult;
 import se.curity.identityserver.sdk.datasource.DeviceDataAccessProvider;
-import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 import java.util.List;
 
@@ -27,77 +26,77 @@ public class ${pluginName}DeviceDataAccessProvider implements DeviceDataAccessPr
     public DeviceAttributes getBy(String deviceId, String accountId)
     {
         _logger.debug("Received request to get device by deviceId :{} and accountId: {}", deviceId, accountId);
-        throw new NotImplementedException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public ResourceAttributes<?> getBy(String deviceId, String accountId,
-        ResourceQuery.AttributesEnumeration attributesEnumeration)
+                                       ResourceQuery.AttributesEnumeration attributesEnumeration)
     {
         _logger.debug("Received request to get device by deviceId :{} and accountId: {}", deviceId, accountId);
-        throw new NotImplementedException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public DeviceAttributes getById(String deviceId)
     {
         _logger.debug("Received request to get device by deviceId :{}", deviceId);
-        throw new NotImplementedException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public ResourceAttributes<?> getById(String deviceId, ResourceQuery.AttributesEnumeration attributesEnumeration)
     {
         _logger.debug("Received request to get device by deviceId :{}", deviceId);
-        throw new NotImplementedException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public List<DeviceAttributes> getByAccountId(String accountId)
     {
         _logger.debug("Received request to get devices by accountId :{}", accountId);
-        throw new NotImplementedException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public List<? extends ResourceAttributes<?>> getByAccountId(String accountId, ResourceQuery.AttributesEnumeration attributesEnumeration)
     {
         _logger.debug("Received request to get devices by accountId :{}", accountId);
-        throw new NotImplementedException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public void create(DeviceAttributes deviceAttributes)
     {
         _logger.debug("Received request to create device by deviceId :{}", deviceAttributes.getDeviceId());
-        throw new NotImplementedException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public void update(DeviceAttributes deviceAttributes)
     {
         _logger.debug("Received request to update device by deviceId :{}", deviceAttributes.getDeviceId());
-        throw new NotImplementedException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public void delete(String id)
     {
         _logger.debug("Received request to update device by id :{}", id);
-        throw new NotImplementedException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public void delete(String deviceId, String accountId)
     {
         _logger.debug("Received request to delete device by deviceId :{} and accountId: {}", deviceId, accountId);
-        throw new NotImplementedException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public ResourceQueryResult getAll(long startIndex, long count)
     {
         _logger.debug("Received request to get all devices with startIndex :{} and count: {}", startIndex, count);
-        throw new NotImplementedException();
+        throw new UnsupportedOperationException();
     }
 }

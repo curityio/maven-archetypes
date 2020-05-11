@@ -9,11 +9,11 @@ import java.util.Set;
 
 import static java.util.Collections.unmodifiableSet;
 
-public final class ${pluginName}EventListenerDescriptor implements EventListenerPluginDescriptor<${pluginName}EventListenerConfig> {
-
+public final class ${pluginName}EventListenerDescriptor implements EventListenerPluginDescriptor<${pluginName}EventListenerConfig>
+{
     @Override
     public Class<? extends EventListenerCollection> getEventListenerCollection()
-        {
+    {
         return ${pluginName}ListenerCollection.class;
     }
 

@@ -3,13 +3,13 @@ package ${package}.${pluginName};
 import se.curity.identityserver.sdk.attribute.ConsentAttributes;
 import se.curity.identityserver.sdk.oauth.consent.ConsentorResult;
 import se.curity.identityserver.sdk.oauth.consent.Consentor;
-import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 public final class ${pluginName}Consentor implements Consentor
 {
     private final ${pluginName}ConsentorConfig _configuration;
 
-    public ${pluginName}Consentor(${pluginName}ConsentorConfig configuration) {
+    public ${pluginName}Consentor(${pluginName}ConsentorConfig configuration)
+    {
         _configuration = configuration;
 
         // See examples of consentors on GitHub: https://github.com/search?q=topic%3Aconsentor+org%3Acurityio
@@ -18,6 +18,6 @@ public final class ${pluginName}Consentor implements Consentor
     @Override
     public ConsentorResult apply(ConsentAttributes consentAttributes, String transactionId)
     {
-        throw new NotImplementedException();
+        throw new UnsupportedOperationException();
     }
 }

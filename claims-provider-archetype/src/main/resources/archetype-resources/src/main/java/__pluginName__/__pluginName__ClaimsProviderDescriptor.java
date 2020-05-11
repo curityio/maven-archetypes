@@ -3,8 +3,8 @@ package ${package}.${pluginName};
 import se.curity.identityserver.sdk.claims.ClaimsProvider;
 import se.curity.identityserver.sdk.plugin.descriptor.ClaimsProviderPluginDescriptor;
 
-public final class ${pluginName}ClaimsProviderDescriptor implements ClaimsProviderPluginDescriptor<${pluginName}ClaimsProviderConfig> {
-
+public final class ${pluginName}ClaimsProviderDescriptor implements ClaimsProviderPluginDescriptor<${pluginName}ClaimsProviderConfig>
+{
     @Override
     public Class<? extends ClaimsProvider> getClaimsProvider()
     {

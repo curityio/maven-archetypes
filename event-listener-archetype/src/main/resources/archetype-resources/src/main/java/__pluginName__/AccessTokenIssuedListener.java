@@ -11,7 +11,8 @@ public final class AccessTokenIssuedListener implements EventListener<IssuedAcce
 
     private final ${pluginName}EventListenerConfig _configuration;
 
-    public AccessTokenIssuedListener(${pluginName}EventListenerConfig configuration) {
+    public AccessTokenIssuedListener(${pluginName}EventListenerConfig configuration)
+    {
         _configuration = configuration;
     }
 

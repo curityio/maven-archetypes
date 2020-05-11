@@ -2,11 +2,12 @@ package ${package}.${pluginName};
 
 import se.curity.identityserver.sdk.service.sms.SmsSender;
 
-public final class ${pluginName}SmsSender implements SmsSender {
-
+public final class ${pluginName}SmsSender implements SmsSender
+{
     private final ${pluginName}SmsConfig _configuration;
 
-    public ${pluginName}SmsSender(${pluginName}SmsConfig configuration) {
+    public ${pluginName}SmsSender(${pluginName}SmsConfig configuration)
+    {
         _configuration = configuration;
     }
 

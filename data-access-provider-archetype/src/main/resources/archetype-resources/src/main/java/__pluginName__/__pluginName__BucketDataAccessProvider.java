@@ -3,7 +3,6 @@ package ${package}.${pluginName};
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import se.curity.identityserver.sdk.datasource.BucketDataAccessProvider;
-import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 import java.util.Map;
 
@@ -23,7 +22,7 @@ public class ${pluginName}BucketDataAccessProvider implements BucketDataAccessPr
     public Map<String, Object> getAttributes(String subject, String purpose)
     {
         _logger.debug("Getting bucket attributes with subject: {} , purpose : {}", subject, purpose);
-        throw new NotImplementedException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -34,12 +33,12 @@ public class ${pluginName}BucketDataAccessProvider implements BucketDataAccessPr
 
         _logger.debug("Storing bucket attributes with subject: {} , purpose : {} and data : {}", subject, purpose, dataMap);
 
-        throw new NotImplementedException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public boolean clearBucket(String subject, String purpose)
     {
-        throw new NotImplementedException();
+        throw new UnsupportedOperationException();
     }
 }

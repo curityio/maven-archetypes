@@ -4,7 +4,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import se.curity.identityserver.sdk.attribute.scim.v2.extensions.DynamicallyRegisteredClientAttributes;
 import se.curity.identityserver.sdk.datasource.DynamicallyRegisteredClientDataAccessProvider;
-import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 public class ${pluginName}DynamicallyRegisteredClientDataAccessProvider implements DynamicallyRegisteredClientDataAccessProvider
 {
@@ -22,7 +21,7 @@ public class ${pluginName}DynamicallyRegisteredClientDataAccessProvider implemen
     public DynamicallyRegisteredClientAttributes getByClientId(String clientId)
     {
         _logger.debug("Getting dynamic client with id: {}", clientId);
-        throw new NotImplementedException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -30,7 +29,7 @@ public class ${pluginName}DynamicallyRegisteredClientDataAccessProvider implemen
     {
         _logger.debug("Received request to CREATE dynamic client with id : {}",
         dynamicallyRegisteredClientAttributes.getClientId());
-        throw new NotImplementedException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -38,13 +37,13 @@ public class ${pluginName}DynamicallyRegisteredClientDataAccessProvider implemen
     {
         _logger.debug("Received request to UPDATE dynamic client for client : {}",
         dynamicallyRegisteredClientAttributes.getClientId());
-        throw new NotImplementedException();
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public void delete(String clientId)
     {
         _logger.debug("Received request to DELETE dynamic client : {}", clientId);
-        throw new NotImplementedException();
+        throw new UnsupportedOperationException();
     }
 }

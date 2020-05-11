@@ -8,13 +8,13 @@ import se.curity.identityserver.sdk.data.authorization.ScopeValue;
 import se.curity.identityserver.sdk.oauth.OAuthClient;
 
 import java.util.Set;
-import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 public final class ${pluginName}ClaimsProvider implements ClaimsProvider
 {
     private final ${pluginName}ClaimsProviderConfig _configuration;
 
-    public ${pluginName}ClaimsProvider(${pluginName}ClaimsProviderConfig configuration) {
+    public ${pluginName}ClaimsProvider(${pluginName}ClaimsProviderConfig configuration)
+    {
         _configuration = configuration;
 
         // See examples of Claims Providers on GitHub: https://github.com/search?q=topic%3Aclaims-provider+org%3Acurityio
@@ -22,10 +22,10 @@ public final class ${pluginName}ClaimsProvider implements ClaimsProvider
 
     @Override
     public Attributes getClaimValues(Set<RequestedClaimAttribute> requestedClaimAttributes,
-        Set<ScopeValue> scopeValues,
-        AuthenticationAttributes userAuthenticationAttributes,
-        OAuthClient client)
+                                     Set<ScopeValue> scopeValues,
+                                     AuthenticationAttributes userAuthenticationAttributes,
+                                     OAuthClient client)
     {
-        throw new NotImplementedException();
+        throw new UnsupportedOperationException();
     }
 }

@@ -3,11 +3,12 @@ package ${package}.${pluginName};
 import se.curity.identityserver.sdk.data.email.RenderableEmail;
 import se.curity.identityserver.sdk.email.Emailer;
 
-public final class ${pluginName}EmailSender implements Emailer {
-
+public final class ${pluginName}EmailSender implements Emailer
+{
     private final ${pluginName}EmailProviderConfig _configuration;
 
-    public ${pluginName}EmailSender(${pluginName}EmailProviderConfig configuration) {
+    public ${pluginName}EmailSender(${pluginName}EmailProviderConfig configuration)
+    {
         _configuration = configuration;
     }
 

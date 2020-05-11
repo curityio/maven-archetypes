@@ -3,8 +3,8 @@ package ${package}.${pluginName};
 import se.curity.identityserver.sdk.oauth.consent.signing.SigningConsentor;
 import se.curity.identityserver.sdk.plugin.descriptor.SigningConsentorPluginDescriptor;
 
-public final class ${pluginName}SigningConsentorDescriptor implements SigningConsentorPluginDescriptor<${pluginName}ConsentorConfig> {
-
+public final class ${pluginName}SigningConsentorDescriptor implements SigningConsentorPluginDescriptor<${pluginName}ConsentorConfig>
+{
     @Override
     public Class<? extends SigningConsentor> getConsentorType()
     {

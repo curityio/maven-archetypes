@@ -3,11 +3,11 @@ package ${package}.${pluginName};
 import se.curity.identityserver.sdk.email.Emailer;
 import se.curity.identityserver.sdk.plugin.descriptor.EmailProviderPluginDescriptor;
 
-public final class ${pluginName}EmailProviderDescriptor implements EmailProviderPluginDescriptor<${pluginName}EmailProviderConfig> {
-
+public final class ${pluginName}EmailProviderDescriptor implements EmailProviderPluginDescriptor<${pluginName}EmailProviderConfig>
+{
     @Override
     public Class<? extends Emailer> getEmailSenderType()
-        {
+    {
         return ${pluginName}EmailSender.class;
     }
 

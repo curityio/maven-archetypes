@@ -3,8 +3,8 @@ package ${package}.${pluginName};
 import se.curity.identityserver.sdk.authenticationaction.AuthenticationAction;
 import se.curity.identityserver.sdk.plugin.descriptor.AuthenticationActionPluginDescriptor;
 
-public final class ${pluginName}AuthenticationActionDescriptor implements AuthenticationActionPluginDescriptor<${pluginName}AuthenticationActionConfig> {
-
+public final class ${pluginName}AuthenticationActionDescriptor implements AuthenticationActionPluginDescriptor<${pluginName}AuthenticationActionConfig>
+{
     @Override
     public Class<? extends AuthenticationAction> getAuthenticationAction()
     {
@@ -23,4 +23,3 @@ public final class ${pluginName}AuthenticationActionDescriptor implements Authen
         return ${pluginName}AuthenticationActionConfig.class;
     }    
 }
-
