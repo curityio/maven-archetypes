@@ -44,12 +44,6 @@
             <version>${project.slf4jVersion}</version>
             <scope>provided</scope>
         </dependency>
-        <dependency>
-            <groupId>com.google.guava</groupId>
-            <artifactId>guava</artifactId>
-            <version>23.5-jre</version>
-            <scope>provided</scope>
-        </dependency>
     </dependencies>
 
     <repositories>

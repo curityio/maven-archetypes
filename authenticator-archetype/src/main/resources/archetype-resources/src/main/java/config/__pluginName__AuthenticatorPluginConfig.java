@@ -9,7 +9,7 @@ import se.curity.identityserver.sdk.service.SessionManager;
 import java.net.URI;
 
 @SuppressWarnings("InterfaceNeverImplemented")
-public interface ${pluginName}AuthenticatorPluginConfig extends Configuration {
-
+public interface ${pluginName}AuthenticatorPluginConfig extends Configuration
+{
     SessionManager getSessionManager();
 }

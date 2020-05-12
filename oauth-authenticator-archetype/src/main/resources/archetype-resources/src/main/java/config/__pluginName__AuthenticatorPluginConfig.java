@@ -13,8 +13,8 @@ import se.curity.identityserver.sdk.service.authentication.AuthenticatorInformat
 import java.util.Optional;
 
 @SuppressWarnings("InterfaceNeverImplemented")
-public interface ${pluginName}AuthenticatorPluginConfig extends Configuration {
-
+public interface ${pluginName}AuthenticatorPluginConfig extends Configuration
+{
 	@Description("Client id")
     String getClientId();
 

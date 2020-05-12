@@ -13,7 +13,8 @@ import se.curity.identityserver.sdk.web.Response;
 
 import java.util.Optional;
 
-public final class ${pluginName}AuthenticatorRequestHandler implements AuthenticatorRequestHandler<RequestModel> {
+public final class ${pluginName}AuthenticatorRequestHandler implements AuthenticatorRequestHandler<RequestModel>
+{
     private static final Logger _logger = LoggerFactory.getLogger(${pluginName}AuthenticatorRequestHandler.class);
 
     private final ${pluginName}AuthenticatorPluginConfig _config;
@@ -21,27 +22,31 @@ public final class ${pluginName}AuthenticatorRequestHandler implements Authentic
     private final ExceptionFactory _exceptionFactory;
 
     public ${pluginName}AuthenticatorRequestHandler(${pluginName}AuthenticatorPluginConfig config,
-                                             ExceptionFactory exceptionFactory,
-                                             AuthenticatorInformationProvider authInfoProvider) {
+                                                    ExceptionFactory exceptionFactory,
+                                                    AuthenticatorInformationProvider authInfoProvider)
+    {
         _config = config;
         _exceptionFactory = exceptionFactory;
         _authInfoProvider = authInfoProvider;
     }
 
     @Override
-    public Optional<AuthenticationResult> get(RequestModel requestModel, Response response) {
+    public Optional<AuthenticationResult> get(RequestModel requestModel, Response response)
+    {
         _logger.info("GET request received for authentication authentication");
 
         return Optional.empty();
     }
 
     @Override
-    public Optional<AuthenticationResult> post(RequestModel requestModel, Response response) {
+    public Optional<AuthenticationResult> post(RequestModel requestModel, Response response)
+    {
         return Optional.empty();
     }
 
     @Override
-    public RequestModel preProcess(Request request, Response response) {
+    public RequestModel preProcess(Request request, Response response)
+    {
         return new RequestModel(request);
     }
 }
