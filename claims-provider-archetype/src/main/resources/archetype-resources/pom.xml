@@ -9,7 +9,7 @@
     <version>${version}</version>
     <packaging>jar</packaging>
 
-    <name>Curity ${pluginName} Consentor</name>
+    <name>Curity ${pluginName} Claims Provider</name>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

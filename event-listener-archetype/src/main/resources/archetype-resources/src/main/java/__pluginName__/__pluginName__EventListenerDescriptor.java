@@ -35,7 +35,7 @@ public final class ${pluginName}EventListenerDescriptor implements EventListener
 
         public ${pluginName}ListenerCollection(${pluginName}EventListenerConfig configuration)
         {
-            _listeners = Collections.singleton(new AccessTokenIssuedListener(configuration));
+            _listeners = Collections.singleton(new ${pluginName}EventListener(configuration));
         }
 
         @Override

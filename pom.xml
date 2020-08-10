@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>io.curity</groupId>
     <artifactId>identityserver.plugins.archetypes</artifactId>
-    <version>2.1.0</version>
+    <version>2.2.0</version>
     
     <name>Curity Plug-in Archetypes</name>
     <description>Archetypes that can generate code for the various kinds of plug-ins supported by the Curity Identity Server</description>
@@ -49,6 +48,15 @@
         <module>signing-consentor-archetype</module>
         <module>consentor-archetype</module>
         <module>claims-provider-archetype</module>
+        <module>kotlin-authentication-action-archetype</module>
+        <module>kotlin-claims-provider-archetype</module>
+        <module>kotlin-consentor-archetype</module>
+        <module>kotlin-data-access-provider-archetype</module>
+        <module>kotlin-email-sender-archetype</module>
+        <module>kotlin-event-listener-archetype</module>
+        <module>kotlin-signing-consentor-archetype</module>
+        <module>kotlin-sms-sender-archetype</module>
+        <module>kotlin-oauth-authenticator-archetype</module>
   </modules>
 
     <organization>

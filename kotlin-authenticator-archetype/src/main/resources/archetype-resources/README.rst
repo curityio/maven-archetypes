@@ -6,7 +6,7 @@ A custom, Kotlin-based authenticator plugin for the Curity Identity Server.
 Building the Plugin
 ~~~~~~~~~~~~~~~~~~~
 
-You can build the plugin by issue the command ``mvn package``. This will produce a JAR file in the ``target`` directory, which can be installed.
+You can build the plugin by issuing the command ``mvn package``. This will produce a JAR file in the ``target`` directory, which can be installed.
 
 Installing the Plugin
 ~~~~~~~~~~~~~~~~~~~~~
