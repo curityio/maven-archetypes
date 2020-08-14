@@ -9,9 +9,9 @@ import se.curity.identityserver.sdk.service.authenticationaction.AuthenticatorDe
 class ${pluginName}AuthenticationAction(private val _configuration: ${pluginName}AuthenticationActionConfig): AuthenticationAction
 {
     override fun apply(authenticationAttributes: AuthenticationAttributes,
-                                            authenticatedSessions: AuthenticatedSessions,
-                                            authenticationTransactionId: String,
-                                            authenticatorDescriptor: AuthenticatorDescriptor): AuthenticationActionResult
+                       authenticatedSessions: AuthenticatedSessions,
+                       authenticationTransactionId: String,
+                       authenticatorDescriptor: AuthenticatorDescriptor): AuthenticationActionResult
     {
 
         // Have a look at this example: https://github.com/curityio/time-authentication-action

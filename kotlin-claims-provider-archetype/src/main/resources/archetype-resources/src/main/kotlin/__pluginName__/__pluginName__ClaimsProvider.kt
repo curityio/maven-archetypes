@@ -7,16 +7,15 @@ import se.curity.identityserver.sdk.claims.RequestedClaimAttribute
 import se.curity.identityserver.sdk.data.authorization.ScopeValue
 import se.curity.identityserver.sdk.oauth.OAuthClient
 
-
 class ${pluginName}ClaimsProvider(private val _configuration: ${pluginName}ClaimsProviderConfig): ClaimsProvider
 {
     // See examples of Claims Providers on GitHub: https://github.com/search?q=topic%3Aclaims-provider+org%3Acurityio
 
     override fun getClaimValues(requestedClaimAttributes: Set<RequestedClaimAttribute>,
-                                     scopeValues: Set<ScopeValue>,
-                                     userAuthenticationAttributes: AuthenticationAttributes,
-                                     client: OAuthClient): Attributes
+                                scopeValues: Set<ScopeValue>,
+                                userAuthenticationAttributes: AuthenticationAttributes,
+                                client: OAuthClient): Attributes
     {
-        throw UnsupportedOperationException()
+        TODO()
     }
 }

@@ -7,16 +7,16 @@ class ${pluginName}SigningConsentor(private val _configuration: ${pluginName}Con
 {
     override fun start(textToDisplay: String, objectToSign: String): SigningConsentorResult
     {
-        throw UnsupportedOperationException()
+        TODO()
     }
 
     override fun poll(): SigningConsentorResult
     {
-        throw UnsupportedOperationException()
+        TODO()
     }
 
     override fun cancel()
     {
-        throw UnsupportedOperationException()
+        TODO()
     }
 }

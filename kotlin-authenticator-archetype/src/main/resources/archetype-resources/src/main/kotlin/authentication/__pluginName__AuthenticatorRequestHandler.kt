@@ -7,7 +7,7 @@ import se.curity.identityserver.sdk.web.Request
 import se.curity.identityserver.sdk.web.Response
 import java.util.Optional
 
-class ${pluginName}AuthenticatorRequestHandler(config : ${pluginName}AuthenticatorPluginConfig)
+class ${pluginName}AuthenticatorRequestHandler(config: ${pluginName}AuthenticatorPluginConfig)
     : AuthenticatorRequestHandler<RequestModel>
 {
     override fun preProcess(request: Request, response: Response): RequestModel = RequestModel(request)

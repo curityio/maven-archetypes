@@ -10,6 +10,6 @@ class ${pluginName}Consentor(private val _configuration: ${pluginName}ConsentorC
 
     override fun apply(consentAttributes: ConsentAttributes,transactionId: String): ConsentorResult
     {
-        throw UnsupportedOperationException();
+        TODO()
     }
 }

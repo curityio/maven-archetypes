@@ -36,11 +36,11 @@ class ${pluginName}AuthenticatorRequestHandler(private val _config: ${pluginName
         _config.getSessionManager().put(Attribute.of("state", state))
 
         val queryStringArguments = linkedMapOf<String, Collection<String>>(
-                Pair("client_id", setOf(_config.getClientId())),
-                Pair("redirect_uri", setOf(redirectUri)),
-                Pair("state", setOf(state)),
-                Pair("response_type", setOf("code")),
-                Pair("scope", setOf(scopes.joinToString(" ")))
+                "client_id" to setOf(_config.getClientId()),
+                "redirect_uri" to setOf(redirectUri),
+                "state" to setOf(state),
+                "response_type" to setOf("code"),
+                "scope" to setOf(scopes.joinToString(" "))
         )
 
         _logger.debug("Redirecting to {} with query string arguments {}", AUTHORIZATION_ENDPOINT,
@@ -56,7 +56,7 @@ class ${pluginName}AuthenticatorRequestHandler(private val _config: ${pluginName
         {
             val authUri = _authenticatorInformationProvider.fullyQualifiedAuthenticationUri
 
-            return URL(authUri.toURL(), authUri.path + "/" + CALLBACK).toString()
+            return URL(authUri.toURL(), "${authUri.path}/$CALLBACK").toString()
         }
         catch (e: MalformedURLException)
         {

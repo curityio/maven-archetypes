@@ -10,25 +10,25 @@ class ${pluginName}DynamicallyRegisteredClientDataAccessProvider(private val _co
     override fun getByClientId(clientId: String): DynamicallyRegisteredClientAttributes
     {
         _logger.debug("Getting dynamic client with id: {}", clientId)
-        throw UnsupportedOperationException()
+        TODO()
     }
 
     override fun create(dynamicallyRegisteredClientAttributes: DynamicallyRegisteredClientAttributes)
     {
         _logger.debug("Received request to CREATE dynamic client with id : {}", dynamicallyRegisteredClientAttributes.clientId)
-        throw UnsupportedOperationException()
+        TODO()
     }
 
     override fun update(dynamicallyRegisteredClientAttributes: DynamicallyRegisteredClientAttributes)
     {
         _logger.debug("Received request to UPDATE dynamic client for client : {}", dynamicallyRegisteredClientAttributes.clientId)
-        throw UnsupportedOperationException()
+        TODO()
     }
 
     override fun delete(clientId: String)
     {
         _logger.debug("Received request to DELETE dynamic client : {}", clientId)
-        throw UnsupportedOperationException()
+        TODO()
     }
 
     companion object

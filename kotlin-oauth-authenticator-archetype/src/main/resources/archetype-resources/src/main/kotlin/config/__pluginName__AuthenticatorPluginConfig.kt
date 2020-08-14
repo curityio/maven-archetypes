@@ -14,7 +14,7 @@ import java.util.Optional
 
 interface ${pluginName}AuthenticatorPluginConfig: Configuration
 {
-	@Description("Client id")
+    @Description("Client id")
     fun getClientId(): String
 
     @Description("Secret key")

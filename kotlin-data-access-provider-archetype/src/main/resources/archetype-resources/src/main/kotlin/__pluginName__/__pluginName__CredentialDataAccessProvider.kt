@@ -8,22 +8,22 @@ import se.curity.identityserver.sdk.datasource.CredentialDataAccessProvider
 
 class ${pluginName}CredentialDataAccessProvider(private val _configuration: ${pluginName}DataAccessProviderConfig): CredentialDataAccessProvider
 {
-    override fun updatePassword(accountAttributes: AccountAttributes )
+    override fun updatePassword(accountAttributes: AccountAttributes)
     {
         _logger.debug("Received request to update password for username : {}", accountAttributes.userName)
-        throw UnsupportedOperationException()
+        TODO()
     }
 
     override fun verifyPassword(userName: String, password: String): AuthenticationAttributes?
     {
         _logger.debug("Received request to verify password for username : {}", userName)
 
-        throw UnsupportedOperationException()
+        TODO()
     }
 
     override fun customQueryVerifiesPassword(): Boolean
     {
-        throw UnsupportedOperationException()
+        TODO()
     }
 
     companion object

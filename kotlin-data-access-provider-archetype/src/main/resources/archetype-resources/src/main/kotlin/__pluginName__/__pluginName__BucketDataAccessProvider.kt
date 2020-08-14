@@ -9,7 +9,7 @@ class ${pluginName}BucketDataAccessProvider(private val _configuration: ${plugin
     override fun getAttributes(subject: String, purpose: String): Map<String, Any>
     {
         _logger.debug("Getting bucket attributes with subject: {} , purpose : {}", subject, purpose)
-        throw UnsupportedOperationException()
+        TODO()
     }
 
     override fun storeAttributes(subject: String, purpose: String, dataMap: MutableMap<String, Any>): Map<String, Any>
@@ -19,12 +19,12 @@ class ${pluginName}BucketDataAccessProvider(private val _configuration: ${plugin
 
         _logger.debug("Storing bucket attributes with subject: {} , purpose : {} and data : {}", subject, purpose, dataMap)
 
-        throw UnsupportedOperationException()
+        TODO()
     }
 
     override fun clearBucket(subject: String, purpose: String): Boolean
     {
-        throw UnsupportedOperationException()
+        TODO()
     }
 
     companion object

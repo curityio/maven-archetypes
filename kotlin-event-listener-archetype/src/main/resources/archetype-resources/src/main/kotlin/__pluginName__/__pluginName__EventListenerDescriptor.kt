@@ -6,11 +6,11 @@ import se.curity.identityserver.sdk.plugin.descriptor.EventListenerPluginDescrip
 
 class ${pluginName}EventListenerDescriptor: EventListenerPluginDescriptor<${pluginName}EventListenerConfig>
 {
-    override fun getEventListenerCollection(): Class<out EventListenerCollection> = ${pluginName}ListenerCollection::class.java
+    override fun getEventListenerCollection() = ${pluginName}ListenerCollection::class.java
 
-    override fun getPluginImplementationType(): String =  "${pluginName.toLowerCase()}"
+    override fun getPluginImplementationType() =  "${pluginName.toLowerCase()}"
 
-    override fun getConfigurationType(): Class<out ${pluginName}EventListenerConfig> = ${pluginName}EventListenerConfig::class.java
+    override fun getConfigurationType() = ${pluginName}EventListenerConfig::class.java
 }
 
 class ${pluginName}ListenerCollection(configuration: ${pluginName}EventListenerConfig): EventListenerCollection

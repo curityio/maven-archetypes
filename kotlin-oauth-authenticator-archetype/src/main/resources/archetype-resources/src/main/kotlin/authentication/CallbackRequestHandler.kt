@@ -126,12 +126,12 @@ class CallbackRequestHandler(private val _config: ${pluginName}AuthenticatorPlug
     }
 
     private fun createPostData(clientId: String, clientSecret: String, code: String, callbackUri: String): Map<String, String> = hashMapOf(
-                Pair("client_id", clientId),
-                Pair("client_secret", clientSecret),
-                Pair("code", code),
-                Pair("grant_type", "authorization_code"),
-                Pair("redirect_uri", callbackUri)
-        )
+        "client_id" to clientId,
+        "client_secret" to clientSecret,
+        "code" to code,
+        "grant_type" to "authorization_code",
+        "redirect_uri" to callbackUri
+    )
 
     private fun getFormEncodedBodyFrom(data: Map<String, String>): HttpRequest.BodyProcessor
     {

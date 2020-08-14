@@ -14,68 +14,68 @@ class ${pluginName}DeviceDataAccessProvider(private val _configuration: ${plugin
     override fun getBy(deviceId: String, accountId: String): DeviceAttributes
     {
         _logger.debug("Received request to get device by deviceId :{} and accountId: {}", deviceId, accountId)
-        throw UnsupportedOperationException()
+        TODO()
     }
 
     override fun getBy(deviceId: String, accountId: String,
                                         attributesEnumeration: ResourceQuery.AttributesEnumeration): ResourceAttributes<*>
     {
         _logger.debug("Received request to get device by deviceId :{} and accountId: {}", deviceId, accountId)
-        throw UnsupportedOperationException()
+        TODO()
     }
 
     override fun getById(deviceId: String): DeviceAttributes
     {
         _logger.debug("Received request to get device by deviceId :{}", deviceId)
-        throw UnsupportedOperationException()
+        TODO()
     }
 
     override fun getById(deviceId: String, attributesEnumeration: ResourceQuery.AttributesEnumeration): ResourceAttributes<*>
     {
         _logger.debug("Received request to get device by deviceId :{}", deviceId)
-        throw UnsupportedOperationException()
+        TODO()
     }
 
     override fun getByAccountId(accountId: String): List<DeviceAttributes>
     {
         _logger.debug("Received request to get devices by accountId :{}", accountId)
-        throw UnsupportedOperationException()
+        TODO()
     }
 
     override fun getByAccountId(accountId: String, attributesEnumeration: ResourceQuery.AttributesEnumeration): List<ResourceAttributes<*>>
     {
         _logger.debug("Received request to get devices by accountId :{}", accountId)
-        throw UnsupportedOperationException()
+        TODO()
     }
 
     override fun create(deviceAttributes: DeviceAttributes)
     {
         _logger.debug("Received request to create device by deviceId :{}", deviceAttributes.deviceId)
-        throw UnsupportedOperationException()
+        TODO()
     }
 
     override fun update(deviceAttributes: DeviceAttributes)
     {
         _logger.debug("Received request to update device by deviceId :{}", deviceAttributes.deviceId)
-        throw UnsupportedOperationException()
+        TODO()
     }
 
     override fun delete(id: String)
     {
         _logger.debug("Received request to update device by id :{}", id)
-        throw UnsupportedOperationException()
+        TODO()
     }
 
     override fun delete(deviceId: String, accountId: String)
     {
         _logger.debug("Received request to delete device by deviceId :{} and accountId: {}", deviceId, accountId)
-        throw UnsupportedOperationException()
+        TODO()
     }
 
     override fun getAll(startIndex: Long, count: Long): ResourceQueryResult
     {
         _logger.debug("Received request to get all devices with startIndex :{} and count: {}", startIndex, count)
-        throw UnsupportedOperationException()
+        TODO()
     }
 
     companion object
