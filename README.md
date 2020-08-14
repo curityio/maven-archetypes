@@ -8,7 +8,6 @@ Identity Server. Currently, the following archetypes are available:
 
 * Authenticator:
     * Vanilla
-    * Kotlin-based
     * OAuth- or OpenID-Connect-based
 * Authentication Action
 * Claims Provider
@@ -19,6 +18,8 @@ Identity Server. Currently, the following archetypes are available:
 * Email Sender
 * Event Listener
 * SMS Sender
+
+All the archetypes are also available in Kotlin version.
 
 The `oauth-authenticator-archetype` is a good one to use when creating an authenticator that communicates with an upstream
 OAuth or OpenID Connect provider. It includes a callback to obtain an authorization code from that provider and uses the
@@ -38,7 +39,7 @@ To create a simple authenticator that *does not* use OAuth or OpenID Connect, ru
 $ mvn -B archetype:generate \
       -DarchetypeArtifactId=identityserver.plugins.archetypes.authenticator \
       -DarchetypeGroupId=io.curity \
-      -DarchetypeVersion=2.1.0  \
+      -DarchetypeVersion=2.2.0  \
       -DartifactId=hello-world \
       -DgroupId=com.example.curity \
       -DpluginName=HelloWorld \
@@ -53,7 +54,7 @@ Similarly, to create a skeleton project that uses OAuth or OpenID Connect to aut
 $ mvn -B archetype:generate \
       -DarchetypeArtifactId=identityserver.plugins.archetypes.oauth-authenticator \
       -DarchetypeGroupId=io.curity \
-      -DarchetypeVersion=2.1.0  \
+      -DarchetypeVersion=2.2.0  \
       -DartifactId=hello-world \
       -DgroupId=com.example.curity \
       -DpluginName=HelloWorld \
@@ -69,7 +70,7 @@ E.g. to create the Event Listener plugin, use this command:
 $ mvn -B archetype:generate \
       -DarchetypeArtifactId=identityserver.plugins.archetypes.event-listener \
       -DarchetypeGroupId=io.curity \
-      -DarchetypeVersion=2.1.0 \
+      -DarchetypeVersion=2.2.0 \
       -DartifactId=hello-world \
       -DgroupId=com.example.curity \
       -DpluginName=HelloWorld \
