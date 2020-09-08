@@ -1,7 +1,7 @@
 # Curity Maven Archetypes
 
-[![Quality](https://curity.io/assets/images/badges/authenticator-maven-archetype-quality.svg)](https://curity.io/resources/code-examples/status/)
-[![Availability](https://curity.io/assets/images/badges/authenticator-maven-archetype-availability.svg)](https://curity.io/resources/code-examples/status/)
+[![Quality](https://img.shields.io/badge/quality-production-green)](https://curity.io/resources/code-examples/status/)
+[![Availability](https://img.shields.io/badge/availability-binary-blue)](https://curity.io/resources/code-examples/status/)
 
 This project provides Maven archetypes to help you quickly create a skeleton of a plug-in which can be used with the Curity
 Identity Server. Currently, the following archetypes are available:
