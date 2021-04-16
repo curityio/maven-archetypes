@@ -6,6 +6,7 @@
 This project provides Maven archetypes to help you quickly create a skeleton of a plug-in which can be used with the Curity
 Identity Server. Currently, the following archetypes are available:
 
+* Alarms Handler
 * Authenticator:
     * Vanilla
     * OAuth- or OpenID-Connect-based

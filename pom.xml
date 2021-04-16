@@ -57,6 +57,8 @@
         <module>kotlin-signing-consentor-archetype</module>
         <module>kotlin-sms-sender-archetype</module>
         <module>kotlin-oauth-authenticator-archetype</module>
+        <module>alarm-handler-archetype</module>
+        <module>kotlin-alarm-handler-archetype</module>
   </modules>
 
     <organization>
