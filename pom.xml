@@ -4,7 +4,7 @@
 
     <groupId>io.curity</groupId>
     <artifactId>identityserver.plugins.archetypes</artifactId>
-    <version>2.3.0</version>
+    <version>2.4.0</version>
     
     <name>Curity Plug-in Archetypes</name>
     <description>Archetypes that can generate code for the various kinds of plug-ins supported by the Curity Identity Server</description>
@@ -21,6 +21,12 @@
             <email>travis.spencer@curity.io</email>
             <organization>Curity AB</organization>
             <organizationUrl>https://curity.io</organizationUrl>
+        </developer>
+        <developer>
+            <name>Michael Bornholdt Nielsen</name>
+            <email>michaelbornholdtnielsen@gmail.com</email>
+            <organization>JarryDk</organization>
+            <organizationUrl>https://www.jarry.dk</organizationUrl>
         </developer>
     </developers>
     <scm>
