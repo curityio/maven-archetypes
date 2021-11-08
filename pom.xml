@@ -67,6 +67,7 @@
         <module>kotlin-oauth-authenticator-archetype</module>
         <module>alarm-handler-archetype</module>
         <module>kotlin-alarm-handler-archetype</module>
+    <module>hello-world</module>
   </modules>
 
     <organization>

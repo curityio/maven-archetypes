@@ -10,7 +10,7 @@
         </requiredProperty>
         <requiredProperty key="pluginName"/>
         <requiredProperty key="curitySdkVersion">
-            <defaultValue>6.4.0</defaultValue>
+            <defaultValue>6.5.0</defaultValue>
         </requiredProperty>
     </requiredProperties>
 
