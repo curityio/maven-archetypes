@@ -21,7 +21,7 @@ public interface ${pluginName}AuthenticatorPluginConfig extends Configuration
     @Description("Secret key")
     String getClientSecret();
 
-    @Description("The HTTP client with any proxy and TLS settings that will be used to connect to LinkedIn")
+    @Description("The HTTP client with any proxy and TLS settings that will be used to connect to the provider")
     Optional<HttpClient> getHttpClient();
 
     SessionManager getSessionManager();

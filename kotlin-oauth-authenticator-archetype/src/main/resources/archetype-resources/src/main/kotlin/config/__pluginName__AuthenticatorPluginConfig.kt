@@ -20,7 +20,7 @@ interface ${pluginName}AuthenticatorPluginConfig: Configuration
     @Description("Secret key")
     fun getClientSecret(): String
 
-    @Description("The HTTP client with any proxy and TLS settings that will be used to connect to LinkedIn")
+    @Description("The HTTP client with any proxy and TLS settings that will be used to connect to the provider")
     fun getHttpClient(): Optional<HttpClient>
 
     fun getSessionManager(): SessionManager
