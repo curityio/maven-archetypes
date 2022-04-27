@@ -1,6 +1,7 @@
 package ${package}.authentication
 
 import ${package}.config.${pluginName}AuthenticatorPluginConfig
+import ${package}.authentication.RedirectUriUtil.Companion.createRedirectUri
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
 import se.curity.identityserver.sdk.attribute.Attribute
@@ -18,8 +19,6 @@ import java.net.URL
 import java.util.Optional
 import java.util.UUID
 
-import ${package}.descriptor.${pluginName}AuthenticatorPluginDescriptor.Companion.CALLBACK
-
 class ${pluginName}AuthenticatorRequestHandler(private val _config: ${pluginName}AuthenticatorPluginConfig): AuthenticatorRequestHandler<Request>
 {
     private val _authenticatorInformationProvider: AuthenticatorInformationProvider = _config.getAuthenticatorInformationProvider()
@@ -29,7 +28,7 @@ class ${pluginName}AuthenticatorRequestHandler(private val _config: ${pluginName
     {
         _logger.debug("GET request received for authentication")
 
-        val redirectUri = createRedirectUri()
+        val redirectUri = createRedirectUri(_authenticatorInformationProvider, _exceptionFactory)
         val state = UUID.randomUUID().toString()
         val scopes = setOf("scope")
 
@@ -48,21 +47,6 @@ class ${pluginName}AuthenticatorRequestHandler(private val _config: ${pluginName
 
         throw _exceptionFactory.redirectException(AUTHORIZATION_ENDPOINT,
                 RedirectStatusCode.MOVED_TEMPORARILY, queryStringArguments, false)
-    }
-
-    private fun createRedirectUri(): String
-    {
-        try
-        {
-            val authUri = _authenticatorInformationProvider.fullyQualifiedAuthenticationUri
-
-            return URL(authUri.toURL(), "${authUri.path}/$CALLBACK").toString()
-        }
-        catch (e: MalformedURLException)
-        {
-            throw _exceptionFactory.internalServerException(ErrorCode.INVALID_REDIRECT_URI,
-                    "Could not create redirect URI")
-        }
     }
 
     override fun post(request: Request, response: Response): Optional<AuthenticationResult>

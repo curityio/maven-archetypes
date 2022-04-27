@@ -1,6 +1,7 @@
 package ${package}.authentication
 
 import ${package}.config.${pluginName}AuthenticatorPluginConfig
+import ${package}.authentication.RedirectUriUtil.Companion.createRedirectUri
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
 import se.curity.identityserver.sdk.attribute.Attribute
@@ -70,12 +71,14 @@ class CallbackRequestHandler(private val _config: ${pluginName}AuthenticatorPlug
 
     private fun redeemCodeForTokens(requestModel: CallbackRequestModel): Map<String, Any>
     {
+        val redirectUri = createRedirectUri(_authenticatorInformationProvider, _exceptionFactory)
+
         val tokenResponse = getWebServiceClient()
                 .withPath("/oauth/v2/accessToken")
                 .request()
                 .contentType("application/x-www-form-urlencoded")
                 .body(getFormEncodedBodyFrom(createPostData(_config.getClientId(), _config.getClientSecret(),
-                        requestModel.code, requestModel.url)))
+                        requestModel.code, redirectUri)))
                 .method("POST")
                 .response()
         val statusCode = tokenResponse.statusCode()
