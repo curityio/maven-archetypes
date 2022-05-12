@@ -34,6 +34,8 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.Optional;
 
+import static ${package}.authentication.RedirectUriUtil.createRedirectUri;
+
 public final class CallbackRequestHandler implements AuthenticatorRequestHandler<CallbackRequestModel>
 {
     private final static Logger _logger = LoggerFactory.getLogger(CallbackRequestHandler.class);
@@ -92,12 +94,14 @@ public final class CallbackRequestHandler implements AuthenticatorRequestHandler
 
     private Map<String, Object> redeemCodeForTokens(CallbackRequestModel requestModel)
     {
+        String redirectUri = createRedirectUri(_authenticatorInformationProvider, _exceptionFactory);
+
         HttpResponse tokenResponse = getWebServiceClient()
                 .withPath("/oauth/v2/accessToken")
                 .request()
                 .contentType("application/x-www-form-urlencoded")
                 .body(getFormEncodedBodyFrom(createPostData(_config.getClientId(), _config.getClientSecret(),
-                        requestModel.getCode(), requestModel.getRequestUrl())))
+                        requestModel.getCode(), redirectUri)))
                 .method("POST")
                 .response();
         int statusCode = tokenResponse.statusCode();
