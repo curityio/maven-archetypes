@@ -25,7 +25,7 @@ class RedirectUriUtil
             }
             catch (e: MalformedURLException)
             {
-                throw exceptionFactory.internalServerException(ErrorCode.INVALID_REDIRECT_URI,
+                throw exceptionFactory.internalServerException(INVALID_REDIRECT_URI,
                     "Could not create redirect URI")
             }
         }

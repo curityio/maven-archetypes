@@ -13,7 +13,7 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.curityVersion>${curitySdkVersion}</project.curityVersion>
-        <project.slf4jVersion>1.7.30</project.slf4jVersion>
+        <project.slf4jVersion>1.7.36</project.slf4jVersion>
         <kotlin.version>1.5.10</kotlin.version>
     </properties>
 
