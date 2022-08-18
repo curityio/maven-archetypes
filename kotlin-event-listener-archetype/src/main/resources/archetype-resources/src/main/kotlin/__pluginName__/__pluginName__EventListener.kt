@@ -6,8 +6,8 @@ import se.curity.identityserver.sdk.event.EventListener
 class ${pluginName}EventListener(private val _configuration: ${pluginName}EventListenerConfig): EventListener<Event>
 {
     // TODO: Change the generic type of the interface and return of the getEventType method to listen to a different type of event.
-    // Event types that can be listened to are implentations of the Evet interface. You can find all the available
-    // event types in the documentation: https://developer.curity.io/docs/latest/developer-guide/plugins/apidocs/index.html
+    // Event types that can be listened to are implementations of the Event interface. You can find all the available
+    // event types in the documentation: https://curity.io/docs/idsvr-java-plugin-sdk/latest/se/curity/identityserver/sdk/data/events/package-summary.html
 
     override fun getEventType(): Class<Event>
     {
