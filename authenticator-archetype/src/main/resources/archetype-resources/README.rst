@@ -6,7 +6,7 @@ A custom authenticator plugin for the Curity Identity Server.
 Building the Plugin
 ~~~~~~~~~~~~~~~~~~~
 
-Ensure that the Curity Nexus server is `configured in your Maven settings <https://developer.curity.io/docs/latest/developer-guide/plugins/index.html#access-to-the-curity-release-repository>`_. Then, build the plugin by issue the command ``mvn package``. This will produce a JAR file in the ``target`` directory, which can be installed.
+Ensure that the Curity Nexus server is `configured in your Maven settings <https://curity.io/docs/idsvr/latest/developer-guide/plugins/index.html#access-to-the-curity-release-repository>`_. Then, build the plugin by issue the command ``mvn package``. This will produce a JAR file in the ``target`` directory, which can be installed.
 
 Installing the Plugin
 ~~~~~~~~~~~~~~~~~~~~~
@@ -23,5 +23,5 @@ More Information
 
 Please visit `curity.io`_ for more information about the Curity Identity Server.
 
-.. _curity.io/plugins: https://support.curity.io/docs/latest/developer-guide/plugins/index.html#plugin-installation
+.. _curity.io/plugins: https://curity.io/docs/idsvr/latest/developer-guide/plugins/index.html#plugin-installation
 .. _curity.io: https://curity.io/

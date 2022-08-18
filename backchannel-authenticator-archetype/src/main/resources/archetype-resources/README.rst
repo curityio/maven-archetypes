@@ -23,5 +23,5 @@ More Information
 
 Please visit `curity.io`_ for more information about the Curity Identity Server.
 
-.. _curity.io/plugins: https://support.curity.io/docs/latest/developer-guide/plugins/index.html#plugin-installation
+.. _curity.io/plugins: https://curity.io/docs/idsvr/latest/developer-guide/plugins/index.html#plugin-installation
 .. _curity.io: https://curity.io/
