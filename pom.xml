@@ -39,7 +39,7 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <mavemArchetypeVersion>3.0.1</mavemArchetypeVersion>
+        <mavenArchetypeVersion>3.0.1</mavenArchetypeVersion>
     </properties>
 
     <modules>
@@ -79,7 +79,7 @@
             <extension>
                 <groupId>org.apache.maven.archetype</groupId>
                 <artifactId>archetype-packaging</artifactId>
-                <version>${mavemArchetypeVersion}</version>
+                <version>${mavenArchetypeVersion}</version>
             </extension>
         </extensions>
 
@@ -87,7 +87,7 @@
             <plugins>
                 <plugin>
                     <artifactId>maven-archetype-plugin</artifactId>
-                    <version>${mavemArchetypeVersion}</version>
+                    <version>${mavenArchetypeVersion}</version>
                 </plugin>
             </plugins>
         </pluginManagement>
