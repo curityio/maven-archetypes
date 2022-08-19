@@ -8,11 +8,11 @@
     
     <name>Curity Plug-in Archetypes</name>
     <description>Archetypes that can generate code for the various kinds of plug-ins supported by the Curity Identity Server</description>
-    <url>https://github.com/curityio/authenticator-maven-archetype</url>
+    <url>https://github.com/curityio/maven-archetypes</url>
     <licenses>
         <license>
             <name>The Apache License, Version 2.0</name>
-            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <url>https://apache.org/licenses/LICENSE-2.0.txt</url>
         </license>
     </licenses>
     <developers>
@@ -30,16 +30,16 @@
         </developer>
     </developers>
     <scm>
-        <connection>scm:git:git://github.com/curityio/authenticator-maven-archetype.git</connection>
-        <developerConnection>scm:git:ssh://github.com:curityio/authenticator-maven-archetype.git</developerConnection>
-        <url>https://github.com/curityio/authenticator-maven-archetype/tree/master</url>
+        <connection>scm:git:git://github.com/curityio/maven-archetypes.git</connection>
+        <developerConnection>scm:git:ssh://github.com:curityio/maven-archetypes.git</developerConnection>
+        <url>https://github.com/curityio/maven-archetypes/tree/master</url>
     </scm>
 
     <packaging>pom</packaging>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <mavenArchetypeVersion>3.0.1</mavenArchetypeVersion>
+        <mavenArchetypeVersion>3.2.1</mavenArchetypeVersion>
     </properties>
 
     <modules>
@@ -103,7 +103,7 @@
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-gpg-plugin</artifactId>
-                        <version>1.6</version>
+                        <version>3.0.1</version>
                         <executions>
                             <execution>
                                 <id>sign-artifacts</id>
@@ -117,7 +117,7 @@
                     <plugin>
                         <groupId>org.sonatype.plugins</groupId>
                         <artifactId>nexus-staging-maven-plugin</artifactId>
-                        <version>1.6.8</version>
+                        <version>1.6.13</version>
                         <extensions>false</extensions>
                         <configuration>
                             <serverId>ossrh</serverId>
