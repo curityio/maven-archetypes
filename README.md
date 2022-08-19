@@ -12,6 +12,7 @@ Identity Server. Currently, the following archetypes are available:
     * OAuth- or OpenID-Connect-based
     * Back-channel
 * Authentication Action
+* Authorization Manager
 * Claims Provider
 * Consentor:
     * Consentor-based
