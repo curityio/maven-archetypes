@@ -48,6 +48,7 @@
         <module>oauth-authenticator-archetype</module>
         <module>kotlin-authenticator-archetype</module>
         <module>authentication-action-archetype</module>
+        <module>authorization-manager-archetype</module>
         <module>data-access-provider-archetype</module>
         <module>sms-sender-archetype</module>
         <module>email-sender-archetype</module>
@@ -56,6 +57,7 @@
         <module>consentor-archetype</module>
         <module>claims-provider-archetype</module>
         <module>kotlin-authentication-action-archetype</module>
+        <module>kotlin-authorization-manager-archetype</module>
         <module>kotlin-backchannel-authenticator-archetype</module>
         <module>kotlin-claims-provider-archetype</module>
         <module>kotlin-consentor-archetype</module>

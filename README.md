@@ -92,4 +92,4 @@ For questions, contact Curity AB:
 >
 > https://curity.io
 
-Copyright (C) 2017 Curity AB.
+Copyright (C) 2022 Curity AB.
