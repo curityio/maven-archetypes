@@ -3,6 +3,7 @@ package ${package}.${pluginName}
 import se.curity.identityserver.sdk.attribute.ContextAttributes
 import se.curity.identityserver.sdk.attribute.SubjectAttributes
 import se.curity.identityserver.sdk.authorization.OAuthObligation
+import se.curity.identityserver.sdk.authorization.AuthorizationResult
 import se.curity.identityserver.sdk.authorization.oauth.OAuthAuthorizationActionAttributes
 import se.curity.identityserver.sdk.authorization.oauth.OAuthAuthorizationManager
 import se.curity.identityserver.sdk.authorization.oauth.OAuthAuthorizationResourceAttributes

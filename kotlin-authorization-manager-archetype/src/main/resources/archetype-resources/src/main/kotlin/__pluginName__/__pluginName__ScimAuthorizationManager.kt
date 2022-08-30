@@ -3,6 +3,7 @@ package ${package}.${pluginName}
 import se.curity.identityserver.sdk.attribute.ContextAttributes
 import se.curity.identityserver.sdk.attribute.SubjectAttributes
 import se.curity.identityserver.sdk.authorization.ScimObligation
+import se.curity.identityserver.sdk.authorization.AuthorizationResult
 import se.curity.identityserver.sdk.authorization.scim.ScimAuthorizationActionAttributes
 import se.curity.identityserver.sdk.authorization.scim.ScimAuthorizationManager
 import se.curity.identityserver.sdk.authorization.scim.ScimAuthorizationResourceAttributes
