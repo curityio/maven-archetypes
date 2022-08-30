@@ -1,10 +1,9 @@
-package ${package}.${pluginName};
+package ${package}.${pluginName}
 
-import se.curity.identityserver.sdk.Nullable;
-import se.curity.identityserver.sdk.authorization.graphql.GraphQLAuthorizationManager;
-import se.curity.identityserver.sdk.authorization.oauth.OAuthAuthorizationManager;
-import se.curity.identityserver.sdk.authorization.scim.ScimAuthorizationManager;
-import se.curity.identityserver.sdk.plugin.descriptor.AuthorizationManagerPluginDescriptor;
+import se.curity.identityserver.sdk.authorization.graphql.GraphQLAuthorizationManager
+import se.curity.identityserver.sdk.authorization.oauth.OAuthAuthorizationManager
+import se.curity.identityserver.sdk.authorization.scim.ScimAuthorizationManager
+import se.curity.identityserver.sdk.plugin.descriptor.AuthorizationManagerPluginDescriptor
 
 class ${pluginName}AuthorizationManagerDescriptor: AuthorizationManagerPluginDescriptor<${pluginName}AuthorizationManagerConfig>
 {
