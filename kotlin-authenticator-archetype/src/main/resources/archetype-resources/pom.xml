@@ -14,8 +14,6 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.curityVersion>${curitySdkVersion}</project.curityVersion>
-        <project.hibernateValidatorVersion>7.0.3.Final</project.hibernateValidatorVersion>
-        <project.slf4jVersion>1.7.36</project.slf4jVersion>
         <kotlin.version>1.6.10</kotlin.version>
     </properties>
 
@@ -52,18 +50,6 @@
             <groupId>se.curity.identityserver</groupId>
             <artifactId>identityserver.sdk</artifactId>
             <version>${project.curityVersion}</version>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.hibernate.validator</groupId>
-            <artifactId>hibernate-validator</artifactId>
-            <version>${project.hibernateValidatorVersion}</version>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-api</artifactId>
-            <version>${project.slf4jVersion}</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
