@@ -9,7 +9,7 @@ This project provides an opens source ${pluginName} Authenticator plug-in for th
 System Requirements
 ~~~~~~~~~~~~~~~~~~~
 
-* Curity Identity Server 5.0.0 and `its system requirements <https://developer.curity.io/docs/latest/system-admin-guide/system-requirements.html>`_
+* Curity Identity Server 5.0.0 and `its system requirements <https://curity.io/docs/idsvr/latest/system-admin-guide/system-requirements.html>`_
 
 Requirements for Building from Source
 """""""""""""""""""""""""""""""""""""
@@ -31,7 +31,7 @@ To install this plug-in, either download a binary version available from the `re
 
     The JAR file needs to be deployed to each run-time node and the admin node. For simple test deployments where the admin node is a run-time node, the JAR file only needs to be copied to one location.
 
-For a more detailed explanation of installing plug-ins, refer to the `Curity developer guide <https://developer.curity.io/docs/latest/developer-guide/plugins/index.html#plugin-installation>`_.
+For a more detailed explanation of installing plug-ins, refer to the `Curity developer guide <https://curity.io/docs/idsvr/latest/developer-guide/plugins/index.html#plugin-installation>`_.
 
 Creating an App in ${pluginName}
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

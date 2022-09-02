@@ -12,6 +12,7 @@ Identity Server. Currently, the following archetypes are available:
     * OAuth- or OpenID-Connect-based
     * Back-channel
 * Authentication Action
+* Authorization Manager
 * Claims Provider
 * Consentor:
     * Consentor-based
@@ -41,7 +42,7 @@ To create a simple authenticator that *does not* use OAuth or OpenID Connect, ru
 $ mvn -B archetype:generate \
       -DarchetypeArtifactId=identityserver.plugins.archetypes.authenticator \
       -DarchetypeGroupId=io.curity \
-      -DarchetypeVersion=2.5.0  \
+      -DarchetypeVersion=3.0.0  \
       -DartifactId=hello-world \
       -DgroupId=com.example.curity \
       -DpluginName=HelloWorld \
@@ -56,7 +57,7 @@ Similarly, to create a skeleton project that uses OAuth or OpenID Connect to aut
 $ mvn -B archetype:generate \
       -DarchetypeArtifactId=identityserver.plugins.archetypes.oauth-authenticator \
       -DarchetypeGroupId=io.curity \
-      -DarchetypeVersion=2.5.0  \
+      -DarchetypeVersion=3.0.0  \
       -DartifactId=hello-world \
       -DgroupId=com.example.curity \
       -DpluginName=HelloWorld \
@@ -72,7 +73,7 @@ E.g. to create the Event Listener plugin, use this command:
 $ mvn -B archetype:generate \
       -DarchetypeArtifactId=identityserver.plugins.archetypes.event-listener \
       -DarchetypeGroupId=io.curity \
-      -DarchetypeVersion=2.5.0 \
+      -DarchetypeVersion=3.0.0 \
       -DartifactId=hello-world \
       -DgroupId=com.example.curity \
       -DpluginName=HelloWorld \
@@ -92,4 +93,4 @@ For questions, contact Curity AB:
 >
 > https://curity.io
 
-Copyright (C) 2017 Curity AB.
+Copyright (C) 2022 Curity AB.
