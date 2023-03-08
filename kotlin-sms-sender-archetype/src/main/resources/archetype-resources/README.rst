@@ -12,7 +12,7 @@ which can be installed.
 Installing the Plugin
 ~~~~~~~~~~~~~~~~~~~~~
 
-To install the plugin, copy the compiled JAR (and all of its dependencies) into the :file:`${IDSVR_HOME}/usr/share/plugins/${pluginGroup}`
+To install the plugin, copy the compiled JAR (and all of its dependencies) into the :file:`${IDSVR_HOME}/usr/share/plugins/${pluginName}`
 on each node, including the admin node. For more information about installing plugins, refer to the `curity.io/plugins`_.
 
 Required Dependencies

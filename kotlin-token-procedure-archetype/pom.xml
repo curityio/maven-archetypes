@@ -13,5 +13,5 @@
 
     <packaging>maven-archetype</packaging>
     <name>Curity Token Procedure Kotlin Archetype</name>
-    <description>An archetype that generates the Kotlin source code necessary to create token procedure plug-in.</description>
+    <description>An archetype that generates the Kotlin source code necessary to create token procedure plugin.</description>
 </project>
