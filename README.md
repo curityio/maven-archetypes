@@ -42,7 +42,7 @@ To create a simple authenticator that *does not* use OAuth or OpenID Connect, ru
 $ mvn -B archetype:generate \
       -DarchetypeArtifactId=identityserver.plugins.archetypes.authenticator \
       -DarchetypeGroupId=io.curity \
-      -DarchetypeVersion=3.0.0  \
+      -DarchetypeVersion=3.1.0  \
       -DartifactId=hello-world \
       -DgroupId=com.example.curity \
       -DpluginName=HelloWorld \
@@ -57,7 +57,7 @@ Similarly, to create a skeleton project that uses OAuth or OpenID Connect to aut
 $ mvn -B archetype:generate \
       -DarchetypeArtifactId=identityserver.plugins.archetypes.oauth-authenticator \
       -DarchetypeGroupId=io.curity \
-      -DarchetypeVersion=3.0.0  \
+      -DarchetypeVersion=3.1.0  \
       -DartifactId=hello-world \
       -DgroupId=com.example.curity \
       -DpluginName=HelloWorld \
@@ -73,7 +73,7 @@ E.g. to create the Event Listener plugin, use this command:
 $ mvn -B archetype:generate \
       -DarchetypeArtifactId=identityserver.plugins.archetypes.event-listener \
       -DarchetypeGroupId=io.curity \
-      -DarchetypeVersion=3.0.0 \
+      -DarchetypeVersion=3.1.0 \
       -DartifactId=hello-world \
       -DgroupId=com.example.curity \
       -DpluginName=HelloWorld \
