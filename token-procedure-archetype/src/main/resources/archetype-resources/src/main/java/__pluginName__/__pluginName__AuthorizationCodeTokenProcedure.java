@@ -5,17 +5,26 @@ import se.curity.identityserver.sdk.data.tokens.TokenIssuerException;
 import se.curity.identityserver.sdk.procedure.token.AuthorizationCodeTokenProcedure;
 import se.curity.identityserver.sdk.procedure.token.context.AuthorizationCodeTokenProcedurePluginContext;
 import se.curity.identityserver.sdk.web.ResponseModel;
+import se.curity.identityserver.sdk.service.issuer.AccessTokenIssuer;
+import se.curity.identityserver.sdk.service.issuer.IdTokenIssuer;
+import se.curity.identityserver.sdk.service.issuer.RefreshTokenIssuer;
 
-import java.time.Instant;
 import java.util.HashMap;
+import java.time.Instant;
 
 public final class ${pluginName}AuthorizationCodeTokenProcedure implements AuthorizationCodeTokenProcedure
 {
     private final ${pluginName}TokenProcedureConfig _configuration;
+    private final AccessTokenIssuer accessTokenIssuer;
+    private final RefreshTokenIssuer refreshTokenIssuer;
+    private final IdTokenIssuer idTokenIssuer;
 
     public ${pluginName}AuthorizationCodeTokenProcedure(${pluginName}TokenProcedureConfig configuration)
     {
         _configuration = configuration;
+        accessTokenIssuer = _configuration.getAccessTokenIssuer();
+        refreshTokenIssuer = _configuration.getRefreshTokenIssuer();
+        idTokenIssuer = _configuration.getIdTokenIssuer();
     }
 
     @Override
@@ -28,10 +37,10 @@ public final class ${pluginName}AuthorizationCodeTokenProcedure implements Autho
 
         try
         {
-            var issuedAccessToken = context.getAccessTokenIssuer().issue(accessTokenData, issuedDelegation);
+            var issuedAccessToken = accessTokenIssuer.issue(accessTokenData, issuedDelegation);
 
             var refreshTokenData = context.getDefaultRefreshTokenData();
-            var issuedRefreshToken = context.getRefreshTokenIssuer().issue(refreshTokenData, issuedDelegation);
+            var issuedRefreshToken = refreshTokenIssuer.issue(refreshTokenData, issuedDelegation);
 
             var responseData = new HashMap<String, Object>(6);
             responseData.put("access_token", issuedAccessToken);
@@ -43,7 +52,6 @@ public final class ${pluginName}AuthorizationCodeTokenProcedure implements Autho
             var idTokenData = context.getDefaultIdTokenData();
             if (idTokenData != null)
             {
-                var idTokenIssuer = context.getIdTokenIssuer();
                 idTokenData.with(Attribute.of("at_hash", idTokenIssuer.atHash(issuedAccessToken)));
 
                 responseData.put("id_token", idTokenIssuer.issue(idTokenData, issuedDelegation));

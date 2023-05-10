@@ -12,13 +12,16 @@ import java.util.ArrayList
 
 class ${pluginName}OpenIdAuthorizeEndpointHybridTokenProcedure(private val _configuration: ${pluginName}TokenProcedureConfig): OpenIdAuthorizeEndpointHybridTokenProcedure
 {
+    private val accessTokenIssuer = _configuration.getAccessTokenIssuer()
+    private val idTokenIssuer = _configuration.getIdTokenIssuer()
+    private val authorizationCodeIssuer = _configuration.getAuthorizationCodeIssuer()
 
     override fun run(context: OpenIdConnectAuthorizeTokenProcedurePluginContext): ResponseModel
     {
         val authorizationCodeData = context.defaultAuthorizationCodeData
         return try
         {
-            val issuedAuthorizationCode = context.authorizationCodeIssuer.issue(authorizationCodeData)
+            val issuedAuthorizationCode = authorizationCodeIssuer.issue(authorizationCodeData)
             val responseData = mutableMapOf<String, Any>(
                 "code" to issuedAuthorizationCode,
                 "state" to context.providedState,
@@ -29,14 +32,13 @@ class ${pluginName}OpenIdAuthorizeEndpointHybridTokenProcedure(private val _conf
             context.defaultAccessTokenData?.let {
                 issuedDelegation = context.delegationIssuer.issue(context.defaultDelegationData)
 
-                responseData["access_token"] = context.accessTokenIssuer.issue(it, issuedDelegation)
+                responseData["access_token"] = accessTokenIssuer.issue(it, issuedDelegation)
                 responseData["token_type"] = "bearer"
                 responseData["scope"] = it.scope
             }
 
             context.defaultIdTokenData?.let { idTokenData ->
                 issuedDelegation = issuedDelegation ?: context.delegationIssuer.issue(context.defaultDelegationData)
-                val idTokenIssuer = context.idTokenIssuer
 
                 val hashClaims = mutableListOf(Attribute.of("c_hash", idTokenIssuer.cHash(issuedAuthorizationCode)))
                 responseData["access_token"]?.let {

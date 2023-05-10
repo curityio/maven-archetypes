@@ -3,6 +3,7 @@ package ${package}.${pluginName};
 import se.curity.identityserver.sdk.data.tokens.TokenIssuerException;
 import se.curity.identityserver.sdk.procedure.token.TokenExchangeTokenProcedure;
 import se.curity.identityserver.sdk.procedure.token.context.TokenExchangeTokenProcedurePluginContext;
+import se.curity.identityserver.sdk.service.issuer.AccessTokenIssuer;
 import se.curity.identityserver.sdk.web.ResponseModel;
 
 import java.time.Instant;
@@ -11,10 +12,12 @@ import java.util.HashMap;
 public final class ${pluginName}TokenExchangeTokenProcedure implements TokenExchangeTokenProcedure
 {
     private final ${pluginName}TokenProcedureConfig _configuration;
+    private final AccessTokenIssuer accessTokenIssuer;
 
     public ${pluginName}TokenExchangeTokenProcedure(${pluginName}TokenProcedureConfig configuration)
     {
         _configuration = configuration;
+        accessTokenIssuer = _configuration.getAccessTokenIssuer();
     }
 
     @Override
@@ -23,7 +26,7 @@ public final class ${pluginName}TokenExchangeTokenProcedure implements TokenExch
         var accessTokenData = context.getDefaultAccessTokenData(context.getDelegation());
         try
         {
-            var issuedAccessToken = context.getAccessTokenIssuer().issue(accessTokenData, context.getDelegation());
+            var issuedAccessToken = accessTokenIssuer.issue(accessTokenData, context.getDelegation());
 
             var responseData = new HashMap<String, Object>(4);
             responseData.put("scope", accessTokenData.getScope());

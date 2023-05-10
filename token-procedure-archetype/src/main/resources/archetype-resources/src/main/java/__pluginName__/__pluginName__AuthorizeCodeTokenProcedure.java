@@ -4,6 +4,7 @@ import se.curity.identityserver.sdk.data.tokens.TokenIssuerException;
 import se.curity.identityserver.sdk.procedure.token.AuthorizeCodeTokenProcedure;
 import se.curity.identityserver.sdk.procedure.token.context.AuthorizeTokenProcedurePluginContext;
 import se.curity.identityserver.sdk.procedure.token.context.OpenIdConnectAuthorizeTokenProcedurePluginContext;
+import se.curity.identityserver.sdk.service.issuer.NonceIssuer;
 import se.curity.identityserver.sdk.web.ResponseModel;
 
 import java.util.HashMap;
@@ -11,10 +12,12 @@ import java.util.HashMap;
 public final class ${pluginName}AuthorizeCodeTokenProcedure implements AuthorizeCodeTokenProcedure
 {
     private final ${pluginName}TokenProcedureConfig _configuration;
+    private final NonceIssuer authorizationCodeIssuer;
 
     public ${pluginName}AuthorizeCodeTokenProcedure(${pluginName}TokenProcedureConfig configuration)
     {
         _configuration = configuration;
+        authorizationCodeIssuer = _configuration.getAuthorizationCodeIssuer();
     }
 
     @Override
@@ -24,7 +27,7 @@ public final class ${pluginName}AuthorizeCodeTokenProcedure implements Authorize
 
         try
         {
-            var issuedAuthorizationCode = context.getAuthorizationCodeIssuer().issue(authorizationCodeData);
+            var issuedAuthorizationCode = authorizationCodeIssuer.issue(authorizationCodeData);
 
             var responseData = new HashMap<String, Object>(4);
             responseData.put("code", issuedAuthorizationCode);

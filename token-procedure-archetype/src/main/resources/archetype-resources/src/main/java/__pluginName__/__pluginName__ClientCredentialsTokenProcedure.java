@@ -3,6 +3,7 @@ package ${package}.${pluginName};
 import se.curity.identityserver.sdk.data.tokens.TokenIssuerException;
 import se.curity.identityserver.sdk.procedure.token.ClientCredentialsTokenProcedure;
 import se.curity.identityserver.sdk.procedure.token.context.ClientCredentialsTokenProcedurePluginContext;
+import se.curity.identityserver.sdk.service.issuer.AccessTokenIssuer;
 import se.curity.identityserver.sdk.web.ResponseModel;
 
 import java.time.Instant;
@@ -11,10 +12,12 @@ import java.util.HashMap;
 public final class ${pluginName}ClientCredentialsTokenProcedure implements ClientCredentialsTokenProcedure
 {
     private final ${pluginName}TokenProcedureConfig _configuration;
+    private final AccessTokenIssuer accessTokenIssuer;
 
     public ${pluginName}ClientCredentialsTokenProcedure(${pluginName}TokenProcedureConfig configuration)
     {
         _configuration = configuration;
+        accessTokenIssuer = _configuration.getAccessTokenIssuer();
     }
 
     @Override
@@ -27,7 +30,7 @@ public final class ${pluginName}ClientCredentialsTokenProcedure implements Clien
 
         try
         {
-            var issuedAccessToken = context.getAccessTokenIssuer().issue(accessTokenData, issuedDelegation);
+            var issuedAccessToken = accessTokenIssuer.issue(accessTokenData, issuedDelegation);
 
             var responseData = new HashMap<String, Object>(4);
 

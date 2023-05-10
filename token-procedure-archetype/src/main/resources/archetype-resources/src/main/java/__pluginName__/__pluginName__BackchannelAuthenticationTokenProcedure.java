@@ -4,6 +4,9 @@ import se.curity.identityserver.sdk.attribute.Attribute;
 import se.curity.identityserver.sdk.data.tokens.TokenIssuerException;
 import se.curity.identityserver.sdk.procedure.token.BackchannelAuthenticationTokenProcedure;
 import se.curity.identityserver.sdk.procedure.token.context.BackchannelAuthenticationTokenProcedurePluginContext;
+import se.curity.identityserver.sdk.service.issuer.AccessTokenIssuer;
+import se.curity.identityserver.sdk.service.issuer.IdTokenIssuer;
+import se.curity.identityserver.sdk.service.issuer.RefreshTokenIssuer;
 import se.curity.identityserver.sdk.web.ResponseModel;
 
 import java.time.Instant;
@@ -12,10 +15,16 @@ import java.util.HashMap;
 public final class ${pluginName}BackchannelAuthenticationTokenProcedure implements BackchannelAuthenticationTokenProcedure
 {
     private final ${pluginName}TokenProcedureConfig _configuration;
+    private final AccessTokenIssuer accessTokenIssuer;
+    private final RefreshTokenIssuer refreshTokenIssuer;
+    private final IdTokenIssuer idTokenIssuer;
 
     public ${pluginName}BackchannelAuthenticationTokenProcedure(${pluginName}TokenProcedureConfig configuration)
     {
         _configuration = configuration;
+        accessTokenIssuer = _configuration.getAccessTokenIssuer();
+        refreshTokenIssuer = _configuration.getRefreshTokenIssuer();
+        idTokenIssuer = _configuration.getIdTokenIssuer();
     }
 
     @Override
@@ -27,10 +36,10 @@ public final class ${pluginName}BackchannelAuthenticationTokenProcedure implemen
         var accessTokenData = context.getDefaultAccessTokenData();
         try
         {
-            var issuedAccessToken = context.getAccessTokenIssuer().issue(accessTokenData, issuedDelegation);
+            var issuedAccessToken = accessTokenIssuer.issue(accessTokenData, issuedDelegation);
 
             var refreshTokenData = context.getDefaultRefreshTokenData();
-            var issuedRefreshToken = context.getRefreshTokenIssuer().issue(refreshTokenData, issuedDelegation);
+            var issuedRefreshToken = refreshTokenIssuer.issue(refreshTokenData, issuedDelegation);
 
             var responseData = new HashMap<String, Object>(6);
 
@@ -41,7 +50,6 @@ public final class ${pluginName}BackchannelAuthenticationTokenProcedure implemen
             responseData.put("expires_in", accessTokenData.getExpires().getEpochSecond() - Instant.now().getEpochSecond());
 
             var idTokenData = context.getDefaultIdTokenData();
-            var idTokenIssuer = context.getIdTokenIssuer();
             idTokenData.with(Attribute.of("at_hash", idTokenIssuer.atHash(issuedAccessToken)));
 
             responseData.put("id_token", idTokenIssuer.issue(idTokenData, issuedDelegation));
