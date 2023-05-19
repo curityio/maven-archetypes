@@ -8,13 +8,14 @@ import se.curity.identityserver.sdk.web.ResponseModel
 
 class ${pluginName}AuthorizeCodeTokenProcedure(private val _configuration: ${pluginName}TokenProcedureConfig): AuthorizeCodeTokenProcedure
 {
+    private val authorizationCodeIssuer = _configuration.getAuthorizationCodeIssuer()
 
     override fun run(context: AuthorizeTokenProcedurePluginContext): ResponseModel
     {
         val authorizationCodeData = context.defaultAuthorizationCodeData
         return try
         {
-            val issuedAuthorizationCode = context.authorizationCodeIssuer.issue(authorizationCodeData)
+            val issuedAuthorizationCode = authorizationCodeIssuer.issue(authorizationCodeData)
             val responseData = mutableMapOf<String, Any>(
                 "code" to issuedAuthorizationCode,
                 "state" to context.providedState,

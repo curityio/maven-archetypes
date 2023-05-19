@@ -9,6 +9,8 @@ import java.time.Instant
 
 class ${pluginName}RopcTokenProcedure(private val _configuration: ${pluginName}TokenProcedureConfig): RopcTokenProcedure
 {
+    private val accessTokenIssuer = _configuration.getAccessTokenIssuer()
+    private val refreshTokenIssuer = _configuration.getRefreshTokenIssuer()
 
     override fun run(context: RopcTokenProcedurePluginContext): ResponseModel
     {
@@ -18,9 +20,9 @@ class ${pluginName}RopcTokenProcedure(private val _configuration: ${pluginName}T
         val accessTokenData = context.defaultAccessTokenData
         return try
         {
-            val issuedAccessToken = context.accessTokenIssuer.issue(accessTokenData, issuedDelegation)
+            val issuedAccessToken = accessTokenIssuer.issue(accessTokenData, issuedDelegation)
             val refreshTokenData = context.defaultRefreshTokenData
-            val issuedRefreshToken = context.refreshTokenIssuer.issue(refreshTokenData, issuedDelegation)
+            val issuedRefreshToken = refreshTokenIssuer.issue(refreshTokenData, issuedDelegation)
 
             ResponseModel.mapResponseModel(mapOf(
                 "scope" to accessTokenData.scope,

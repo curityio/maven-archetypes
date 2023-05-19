@@ -9,6 +9,7 @@ import java.time.Instant
 
 class ${pluginName}AssistedTokenProcedure(private val _configuration: ${pluginName}TokenProcedureConfig): AssistedTokenProcedure
 {
+    private val accessTokenIssuer = _configuration.getAccessTokenIssuer()
 
     override fun run(context: AssistedTokenProcedurePluginContext): ResponseModel
     {
@@ -28,7 +29,7 @@ class ${pluginName}AssistedTokenProcedure(private val _configuration: ${pluginNa
         val accessTokenData = context.defaultAccessTokenData
         return try
         {
-            val issuedAccessToken = context.accessTokenIssuer.issue(accessTokenData, issuedDelegation)
+            val issuedAccessToken = accessTokenIssuer.issue(accessTokenData, issuedDelegation)
 
             ResponseModel.mapResponseModel(mapOf(
                 "status" to "success",

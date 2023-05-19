@@ -8,14 +8,16 @@ import java.time.Instant
 
 class ${pluginName}RefreshTokenProcedure(private val _configuration: ${pluginName}TokenProcedureConfig): RefreshTokenProcedure
 {
+    private val accessTokenIssuer = _configuration.getAccessTokenIssuer()
+    private val refreshTokenIssuer = _configuration.getRefreshTokenIssuer()
 
     override fun run(context: RefreshTokenProcedurePluginContext): ResponseModel
     {
         val accessTokenData = context.getDefaultAccessTokenData(context.delegation)
         return try
         {
-            val issuedAccessToken = context.accessTokenIssuer.issue(accessTokenData, context.delegation)
-            val refreshToken = context.presentedToken.value ?: context.refreshTokenIssuer.issue(context.defaultRefreshTokenData, context.delegation)
+            val issuedAccessToken = accessTokenIssuer.issue(accessTokenData, context.delegation)
+            val refreshToken = context.presentedToken.value ?: refreshTokenIssuer.issue(context.defaultRefreshTokenData, context.delegation)
 
             ResponseModel.mapResponseModel(mapOf(
                 "scope" to accessTokenData.scope,

@@ -9,6 +9,7 @@ import java.time.Instant
 
 class ${pluginName}AssertionTokenProcedure(private val _configuration: ${pluginName}TokenProcedureConfig): AssertionTokenProcedure
 {
+    private val accessTokenIssuer = _configuration.getAccessTokenIssuer()
 
     override fun run(context: AssertionTokenProcedurePluginContext): ResponseModel
     {
@@ -21,7 +22,7 @@ class ${pluginName}AssertionTokenProcedure(private val _configuration: ${pluginN
         {
             ResponseModel.mapResponseModel(mapOf(
                 "scope" to accessTokenData.scope,
-                "access_token" to context.accessTokenIssuer.issue(accessTokenData, issuedDelegation),
+                "access_token" to accessTokenIssuer.issue(accessTokenData, issuedDelegation),
                 "token_type" to "bearer",
                 "expires_in" to accessTokenData.expires.epochSecond - Instant.now().epochSecond
             ))

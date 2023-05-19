@@ -9,12 +9,14 @@ import java.time.Instant
 
 class ${pluginName}TokenExchangeTokenProcedure(private val _configuration: ${pluginName}TokenProcedureConfig): TokenExchangeTokenProcedure
 {
+    private val accessTokenIssuer = _configuration.getAccessTokenIssuer()
+
     override fun run(context: TokenExchangeTokenProcedurePluginContext): ResponseModel
     {
         val accessTokenData = context.getDefaultAccessTokenData(context.delegation)
         return try
         {
-            val issuedAccessToken = context.accessTokenIssuer.issue(accessTokenData, context.delegation)
+            val issuedAccessToken = accessTokenIssuer.issue(accessTokenData, context.delegation)
 
             ResponseModel.mapResponseModel(mapOf(
                 "scope" to accessTokenData.scope,

@@ -6,6 +6,8 @@ import se.curity.identityserver.sdk.data.tokens.TokenIssuerException;
 import se.curity.identityserver.sdk.procedure.token.AuthorizeImplicitTokenProcedure;
 import se.curity.identityserver.sdk.procedure.token.context.AuthorizeTokenProcedurePluginContext;
 import se.curity.identityserver.sdk.procedure.token.context.OpenIdConnectAuthorizeTokenProcedurePluginContext;
+import se.curity.identityserver.sdk.service.issuer.AccessTokenIssuer;
+import se.curity.identityserver.sdk.service.issuer.IdTokenIssuer;
 import se.curity.identityserver.sdk.web.ResponseModel;
 
 import java.time.Instant;
@@ -15,10 +17,14 @@ import java.util.HashMap;
 public final class ${pluginName}AuthorizeImplicitTokenProcedure implements AuthorizeImplicitTokenProcedure
 {
     private final ${pluginName}TokenProcedureConfig _configuration;
+    private final AccessTokenIssuer accessTokenIssuer;
+    private final IdTokenIssuer idTokenIssuer;
 
     public ${pluginName}AuthorizeImplicitTokenProcedure(${pluginName}TokenProcedureConfig configuration)
     {
         _configuration = configuration;
+        accessTokenIssuer = _configuration.getAccessTokenIssuer();
+        idTokenIssuer = _configuration.getIdTokenIssuer();
     }
 
     @Override
@@ -39,7 +45,7 @@ public final class ${pluginName}AuthorizeImplicitTokenProcedure implements Autho
                 var delegationData = context.getDefaultDelegationData();
                 issuedDelegation = context.getDelegationIssuer().issue(delegationData);
 
-                issuedAccessToken = context.getAccessTokenIssuer().issue(accessTokenData, issuedDelegation);
+                issuedAccessToken = accessTokenIssuer.issue(accessTokenData, issuedDelegation);
 
                 responseData.put("access_token", issuedAccessToken);
                 responseData.put("token_type", "bearer");
@@ -56,7 +62,6 @@ public final class ${pluginName}AuthorizeImplicitTokenProcedure implements Autho
                     issuedDelegation = context.getDelegationIssuer().issue(delegationData);
                 }
 
-                var idTokenIssuer = context.getIdTokenIssuer();
                 idTokenData.with(Attribute.of("at_hash", idTokenIssuer.atHash(issuedAccessToken)));
 
                 responseData.put("id_token", idTokenIssuer.issue(idTokenData, issuedDelegation));

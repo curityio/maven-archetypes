@@ -11,6 +11,9 @@ import java.time.Instant
 
 class ${pluginName}BackchannelAuthenticationTokenProcedure(private val _configuration: ${pluginName}TokenProcedureConfig): BackchannelAuthenticationTokenProcedure
 {
+    private val accessTokenIssuer = _configuration.getAccessTokenIssuer()
+    private val refreshTokenIssuer = _configuration.getRefreshTokenIssuer()
+    private val idTokenIssuer = _configuration.getIdTokenIssuer()
 
     override fun run(context: BackchannelAuthenticationTokenProcedurePluginContext): ResponseModel
     {
@@ -20,9 +23,9 @@ class ${pluginName}BackchannelAuthenticationTokenProcedure(private val _configur
         val accessTokenData = context.defaultAccessTokenData
         return try
         {
-            val issuedAccessToken = context.accessTokenIssuer.issue(accessTokenData, issuedDelegation)
+            val issuedAccessToken = accessTokenIssuer.issue(accessTokenData, issuedDelegation)
             val refreshTokenData = context.defaultRefreshTokenData
-            val issuedRefreshToken = context.refreshTokenIssuer.issue(refreshTokenData, issuedDelegation)
+            val issuedRefreshToken = refreshTokenIssuer.issue(refreshTokenData, issuedDelegation)
             val responseData = mutableMapOf<String, Any>(
                 "access_token" to issuedAccessToken,
                 "scope" to accessTokenData.scope,
@@ -32,7 +35,6 @@ class ${pluginName}BackchannelAuthenticationTokenProcedure(private val _configur
             )
 
             context.defaultIdTokenData?.let {
-                val idTokenIssuer = context.idTokenIssuer
                 responseData["id_token"] = idTokenIssuer.issue(IdTokenAttributes.of(
                     it.with(Attribute.of("at_hash", idTokenIssuer.atHash(issuedAccessToken)))
                 ), issuedDelegation)

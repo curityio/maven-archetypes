@@ -9,6 +9,7 @@ import java.time.Instant
 
 class ${pluginName}ClientCredentialsTokenProcedure(private val _configuration: ${pluginName}TokenProcedureConfig): ClientCredentialsTokenProcedure
 {
+    private val accessTokenIssuer = _configuration.getAccessTokenIssuer()
 
     override fun run(context: ClientCredentialsTokenProcedurePluginContext): ResponseModel
     {
@@ -18,7 +19,7 @@ class ${pluginName}ClientCredentialsTokenProcedure(private val _configuration: $
 
         return try
         {
-            val issuedAccessToken = context.accessTokenIssuer.issue(accessTokenData, issuedDelegation)
+            val issuedAccessToken = accessTokenIssuer.issue(accessTokenData, issuedDelegation)
 
             ResponseModel.mapResponseModel(mapOf(
                 "scope" to accessTokenData.scope,

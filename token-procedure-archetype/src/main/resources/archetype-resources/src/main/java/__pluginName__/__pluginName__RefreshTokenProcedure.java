@@ -3,6 +3,8 @@ package ${package}.${pluginName};
 import se.curity.identityserver.sdk.data.tokens.TokenIssuerException;
 import se.curity.identityserver.sdk.procedure.token.RefreshTokenProcedure;
 import se.curity.identityserver.sdk.procedure.token.context.RefreshTokenProcedurePluginContext;
+import se.curity.identityserver.sdk.service.issuer.AccessTokenIssuer;
+import se.curity.identityserver.sdk.service.issuer.RefreshTokenIssuer;
 import se.curity.identityserver.sdk.web.ResponseModel;
 import java.time.Instant;
 import java.util.HashMap;
@@ -10,10 +12,14 @@ import java.util.HashMap;
 public final class ${pluginName}RefreshTokenProcedure implements RefreshTokenProcedure
 {
     private final ${pluginName}TokenProcedureConfig _configuration;
+    private final AccessTokenIssuer accessTokenIssuer;
+    private final RefreshTokenIssuer refreshTokenIssuer;
 
     public ${pluginName}RefreshTokenProcedure(${pluginName}TokenProcedureConfig configuration)
     {
         _configuration = configuration;
+        accessTokenIssuer = _configuration.getAccessTokenIssuer();
+        refreshTokenIssuer = _configuration.getRefreshTokenIssuer();
     }
 
     @Override
@@ -23,13 +29,13 @@ public final class ${pluginName}RefreshTokenProcedure implements RefreshTokenPro
         String issuedAccessToken = null;
         try
         {
-            issuedAccessToken = pluginContext.getAccessTokenIssuer().issue(accessTokenData, pluginContext.getDelegation());
+            issuedAccessToken = accessTokenIssuer.issue(accessTokenData, pluginContext.getDelegation());
             var refreshToken = pluginContext.getPresentedToken().getValue();
 
             if (refreshToken == null)
             {
                 var refreshTokenData = pluginContext.getDefaultRefreshTokenData();
-                refreshToken = pluginContext.getRefreshTokenIssuer().issue(refreshTokenData, pluginContext.getDelegation());
+                refreshToken = refreshTokenIssuer.issue(refreshTokenData, pluginContext.getDelegation());
             }
 
             var responseMap = new HashMap<String, Object>(5);

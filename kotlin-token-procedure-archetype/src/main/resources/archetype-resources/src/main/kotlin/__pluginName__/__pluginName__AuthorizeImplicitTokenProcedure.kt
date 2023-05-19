@@ -13,6 +13,8 @@ import java.time.Instant
 
 class ${pluginName}AuthorizeImplicitTokenProcedure(private val _configuration: ${pluginName}TokenProcedureConfig): AuthorizeImplicitTokenProcedure
 {
+    private val accessTokenIssuer = _configuration.getAccessTokenIssuer()
+    private val idTokenIssuer = _configuration.getIdTokenIssuer()
 
     override fun run(context: AuthorizeTokenProcedurePluginContext): ResponseModel
     {
@@ -28,7 +30,7 @@ class ${pluginName}AuthorizeImplicitTokenProcedure(private val _configuration: $
             context.defaultAccessTokenData?.let {
                 val delegationData = context.defaultDelegationData
                 issuedDelegation = context.delegationIssuer.issue(delegationData)
-                responseData["access_token"] = context.accessTokenIssuer.issue(it, issuedDelegation)
+                responseData["access_token"] = accessTokenIssuer.issue(it, issuedDelegation)
                 responseData["token_type"] = "bearer"
                 responseData["expires_in"] = it.expires.epochSecond - Instant.now().epochSecond
                 responseData["scope"] = it.scope
@@ -40,7 +42,6 @@ class ${pluginName}AuthorizeImplicitTokenProcedure(private val _configuration: $
                     val delegationData = context.defaultDelegationData
                     issuedDelegation = context.delegationIssuer.issue(delegationData)
                 }
-                val idTokenIssuer = context.idTokenIssuer
                 val idTokenData = if (responseData["access_token"] != null)
                 {
                     IdTokenAttributes.of(
