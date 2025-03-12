@@ -5,7 +5,7 @@
     <groupId>io.curity</groupId>
     <artifactId>identityserver.plugins.archetypes</artifactId>
     <version>3.2.0</version>
-    
+
     <name>Curity Plug-in Archetypes</name>
     <description>Archetypes that can generate code for the various kinds of plug-ins supported by the Curity Identity Server</description>
     <url>https://github.com/curityio/maven-archetypes</url>
@@ -71,6 +71,8 @@
         <module>kotlin-alarm-handler-archetype</module>
         <module>token-procedure-archetype</module>
         <module>kotlin-token-procedure-archetype</module>
+        <module>application-archetype</module>
+        <module>kotlin-application-archetype</module>
   </modules>
 
     <organization>
