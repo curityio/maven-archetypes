@@ -2,7 +2,8 @@ package ${package}.${pluginName};
 
 import se.curity.identityserver.sdk.Nullable;
 import se.curity.identityserver.sdk.datasource.BucketDataAccessProvider;
-import se.curity.identityserver.sdk.datasource.CredentialDataAccessProvider;
+import se.curity.identityserver.sdk.datasource.CredentialDataAccessProviderFactory;
+import se.curity.identityserver.sdk.datasource.CredentialStoringDataAccessProvider;
 import se.curity.identityserver.sdk.datasource.DeviceDataAccessProvider;
 import se.curity.identityserver.sdk.datasource.DynamicallyRegisteredClientDataAccessProvider;
 import se.curity.identityserver.sdk.datasource.UserAccountDataAccessProvider;
@@ -24,9 +25,9 @@ public final class ${pluginName}DataAccessProviderDescriptor implements DataAcce
 
     @Nullable
     @Override
-    public Class<? extends CredentialDataAccessProvider> getCredentialDataAccessProvider()
+    public Class<? extends CredentialDataAccessProviderFactory> getCredentialDataAccessProviderFactory()
     {
-        return ${pluginName}CredentialDataAccessProvider.class;
+        return ${pluginName}CredentialStoringDataAccessProvider.class;
     }
 
     @Nullable

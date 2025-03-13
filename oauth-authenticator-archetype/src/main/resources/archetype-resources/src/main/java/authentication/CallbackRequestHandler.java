@@ -23,7 +23,6 @@ import se.curity.identityserver.sdk.service.authentication.AuthenticatorInformat
 import se.curity.identityserver.sdk.web.Request;
 import se.curity.identityserver.sdk.web.Response;
 
-import java.io.UnsupportedEncodingException;
 import java.net.URI;
 import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;
@@ -83,13 +82,13 @@ public final class CallbackRequestHandler implements AuthenticatorRequestHandler
 
         List<Attribute> subjectAttributers = new ArrayList<>();
         subjectAttributers.add(Attribute.of("id", Objects.toString(tokenResponseData.get("id"))));
-        
+
 
         AuthenticationAttributes attributes = AuthenticationAttributes.of(
                 SubjectAttributes.of(tokenResponseData.get("id").toString(), Attributes.of(subjectAttributers)),
                 ContextAttributes.of(Attributes.of(Attribute.of("access_token", tokenResponseData.get("access_token").toString()))));
         AuthenticationResult authenticationResult = new AuthenticationResult(attributes);
-        return Optional.ofNullable(authenticationResult);
+        return Optional.of(authenticationResult);
     }
 
     private Map<String, Object> redeemCodeForTokens(CallbackRequestModel requestModel)
@@ -170,7 +169,7 @@ public final class CallbackRequestHandler implements AuthenticatorRequestHandler
 
         data.entrySet().forEach(e -> appendParameter(stringBuilder, e));
 
-        return HttpRequest.fromString(stringBuilder.toString());
+        return HttpRequest.fromString(stringBuilder.toString(), StandardCharsets.UTF_8);
     }
 
     private static void appendParameter(StringBuilder stringBuilder, Map.Entry<String, String> entry)
@@ -191,13 +190,7 @@ public final class CallbackRequestHandler implements AuthenticatorRequestHandler
 
     private static String urlEncodeString(String unencodedString)
     {
-        try
-        {
-            return URLEncoder.encode(unencodedString, StandardCharsets.UTF_8.name());
-        } catch (UnsupportedEncodingException e)
-        {
-            throw new RuntimeException("This server cannot support UTF-8!", e);
-        }
+        return URLEncoder.encode(unencodedString, StandardCharsets.UTF_8);
     }
 
     private void validateState(String state)

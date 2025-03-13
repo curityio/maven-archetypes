@@ -14,4 +14,8 @@
     <packaging>maven-archetype</packaging>
     <name>Curity Kotlin Application Archetype</name>
     <description>An archetype that generates the Kotlin source code necessary to create an application plug-in.</description>
+
+    <properties>
+        <archetype.curityProvidedSlf4jVersion>${project.curityProvidedSlf4jVersion}</archetype.curityProvidedSlf4jVersion>
+    </properties>
 </project>

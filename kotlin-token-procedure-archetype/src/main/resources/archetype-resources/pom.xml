@@ -14,7 +14,7 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.curityVersion>${curitySdkVersion}</project.curityVersion>
-        <kotlin.version>1.6.10</kotlin.version>
+        <kotlin.version>2.0.20</kotlin.version>
     </properties>
 
     <build>
@@ -55,7 +55,7 @@
         </dependency>
         <dependency>
             <groupId>org.jetbrains.kotlin</groupId>
-            <artifactId>kotlin-stdlib-jdk8</artifactId>
+            <artifactId>kotlin-stdlib</artifactId>
             <version>${kotlin.version}</version>
             <scope>provided</scope>
         </dependency>

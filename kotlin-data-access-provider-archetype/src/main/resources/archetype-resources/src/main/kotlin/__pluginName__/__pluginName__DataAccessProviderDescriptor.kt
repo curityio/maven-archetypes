@@ -8,7 +8,7 @@ class ${pluginName}DataAccessProviderDescriptor: DataAccessProviderPluginDescrip
 
     override fun getConfigurationType() = ${pluginName}DataAccessProviderConfig::class.java
 
-    override fun getCredentialDataAccessProvider() = ${pluginName}CredentialDataAccessProvider::class.java
+    override fun getCredentialDataAccessProviderFactory() = ${pluginName}CredentialStoringDataAccessProvider::class.java
 
     override fun getUserAccountDataAccessProvider() = ${pluginName}UserAccountDataAccessProvider::class.java
 

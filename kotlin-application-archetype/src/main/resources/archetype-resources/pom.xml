@@ -15,7 +15,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.curityVersion>${curitySdkVersion}</project.curityVersion>
         <kotlin.version>2.0.20</kotlin.version>
-        <project.slf4jVersion>2.0.12</project.slf4jVersion>
+        <slf4J.version>2.0.12</slf4J.version>
     </properties>
 
     <build>
@@ -62,7 +62,7 @@
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-api</artifactId>
-            <version>${project.slf4jVersion}</version>
+            <version>${slf4J.version}</version>
             <scope>provided</scope>
         </dependency>
     </dependencies>

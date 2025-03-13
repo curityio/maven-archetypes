@@ -1,5 +1,6 @@
 package ${package}.${pluginName};
 
+import se.curity.identityserver.sdk.attribute.ConsentAttributes;
 import se.curity.identityserver.sdk.oauth.consent.SigningConsentorResult;
 import se.curity.identityserver.sdk.oauth.consent.signing.SigningConsentor;
 
@@ -15,7 +16,14 @@ public final class ${pluginName}SigningConsentor implements SigningConsentor
     }
 
     @Override
+    @Deprecated
     public SigningConsentorResult start(String textToDisplay, String objectToSign)
+    {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override
+    public SigningConsentorResult start(String textToDisplay, String objectToSign, ConsentAttributes consentAttributes)
     {
         throw new UnsupportedOperationException();
     }
