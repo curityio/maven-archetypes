@@ -9,7 +9,7 @@ import se.curity.identityserver.sdk.datasource.CredentialStoringDataAccessProvid
 
 public final class ${pluginName}CredentialStoringDataAccessProvider implements CredentialStoringDataAccessProvider, CredentialDataAccessProviderFactory
 {
-    private static final Logger _logger = LoggerFactory.getLogger(${pluginName}CredentialDataAccessProvider.class);
+    private static final Logger _logger = LoggerFactory.getLogger(${pluginName}CredentialStoringDataAccessProvider.class);
 
     private final ${pluginName}DataAccessProviderConfig _configuration;
 

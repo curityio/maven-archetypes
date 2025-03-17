@@ -2,10 +2,11 @@ package ${package}.${pluginName}
 
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
-import se.curity.identityserver.sdk.attribute.AccountAttributes
-import se.curity.identityserver.sdk.attribute.AuthenticationAttributes
+import se.curity.identityserver.sdk.Nullable
+import se.curity.identityserver.sdk.attribute.SubjectAttributes
 import se.curity.identityserver.sdk.datasource.CredentialDataAccessProviderFactory
 import se.curity.identityserver.sdk.datasource.CredentialStoringDataAccessProvider
+import se.curity.identityserver.sdk.datasource.CredentialStoringDataAccessProvider.GetResult
 
 class ${pluginName}CredentialStoringDataAccessProvider(private val _configuration: ${pluginName}DataAccessProviderConfig): CredentialStoringDataAccessProvider, CredentialDataAccessProviderFactory
 {
@@ -23,7 +24,7 @@ class ${pluginName}CredentialStoringDataAccessProvider(private val _configuratio
         TODO()
     }
 
-    override fun store(subjectAttributes: SubjectAttributes, password: String?): void {
+    override fun store(subjectAttributes: SubjectAttributes, password: String?) {
         _logger.debug("Received request to store password for user : {}", subjectAttributes.subject)
 
         TODO()
@@ -31,6 +32,6 @@ class ${pluginName}CredentialStoringDataAccessProvider(private val _configuratio
 
     companion object
     {
-        private val _logger: Logger = LoggerFactory.getLogger(${pluginName}CredentialDataAccessProvider::class.java)
+        private val _logger: Logger = LoggerFactory.getLogger(${pluginName}CredentialStoringDataAccessProvider::class.java)
     }
 }

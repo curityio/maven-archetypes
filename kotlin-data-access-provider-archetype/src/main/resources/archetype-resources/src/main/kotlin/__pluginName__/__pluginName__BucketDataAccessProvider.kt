@@ -29,6 +29,6 @@ class ${pluginName}BucketDataAccessProvider(private val _configuration: ${plugin
 
     companion object
     {
-        private val _logger: Logger = LoggerFactory.getLogger(${pluginName}CredentialDataAccessProvider::class.java)
+        private val _logger: Logger = LoggerFactory.getLogger(${pluginName}BucketDataAccessProvider::class.java)
     }
 }
