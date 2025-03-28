@@ -39,8 +39,8 @@
                     </execution>
                 </executions>
                 <configuration>
-                    <jvmSource>17</jvmSource>
-                    <jvmTarget>17</jvmTarget>
+                    <jvmSource>21</jvmSource>
+                    <jvmTarget>21</jvmTarget>
                 </configuration>
             </plugin>
         </plugins>
