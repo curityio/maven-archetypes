@@ -1,1 +1,1 @@
-${package}.${pluginName}.${pluginName}ApplicationPluginDescriptor
+${package}.descriptor.${pluginName}ApplicationPluginDescriptor

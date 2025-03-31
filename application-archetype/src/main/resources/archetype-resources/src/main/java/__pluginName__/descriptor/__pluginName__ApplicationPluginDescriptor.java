@@ -11,7 +11,7 @@ import java.util.Map;
 import static java.util.Collections.singletonMap;
 import static java.util.Collections.unmodifiableMap;
 
-public final class ${pluginName}ApplicationDescriptor implements ApplicationPluginDescriptor<${pluginName}ApplicationConfig>
+public final class ${pluginName}ApplicationPluginDescriptor implements ApplicationPluginDescriptor<${pluginName}ApplicationConfig>
 {
     @Override
     public Map<String, Class<? extends RequestHandler<?>>> getAnonymousRequestHandlerTypes()

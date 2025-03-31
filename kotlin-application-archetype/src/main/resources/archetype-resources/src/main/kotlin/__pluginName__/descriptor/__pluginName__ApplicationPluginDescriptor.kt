@@ -6,7 +6,7 @@ import se.curity.identityserver.sdk.web.HttpRequestHandler;
 import ${package}.config.${pluginName}ApplicationConfig;
 import ${package}.handler.${pluginName}ApplicationRequestHandler;
 
-class ${pluginName}ApplicationDescriptor: ApplicationPluginDescriptor<${pluginName}ApplicationConfig> {
+class ${pluginName}ApplicationPluginDescriptor: ApplicationPluginDescriptor<${pluginName}ApplicationConfig> {
 
     override fun getAnonymousRequestHandlerTypes() = linkedMapOf(
         "index" to ${pluginName}ApplicationRequestHandler::class.java
