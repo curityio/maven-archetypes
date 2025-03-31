@@ -6,6 +6,7 @@ import se.curity.identityserver.sdk.service.authentication.AuthenticatorInformat
 
 import java.net.MalformedURLException;
 import java.net.URI;
+import java.net.URISyntaxException;
 import java.net.URL;
 
 import static ${package}.descriptor.${pluginName}AuthenticatorPluginDescriptor.CALLBACK;
@@ -21,9 +22,15 @@ final class RedirectUriUtil
         {
             URI authUri = authenticatorInformationProvider.getFullyQualifiedAuthenticationUri();
 
-            return new URL(authUri.toURL(), authUri.getPath() + "/" + CALLBACK).toString();
+            return new URI(
+                    authUri.getScheme(),
+                    authUri.getAuthority(),
+                    authUri.getPath() + "/" + CALLBACK,
+                    authUri.getQuery(),
+                    authUri.getFragment()
+            ).toURL().toString();
         }
-        catch (MalformedURLException e)
+        catch (URISyntaxException | MalformedURLException e)
         {
             throw exceptionFactory.internalServerException(ErrorCode.INVALID_REDIRECT_URI,
                     "Could not create redirect URI");

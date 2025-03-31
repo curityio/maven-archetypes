@@ -91,6 +91,6 @@ class ${pluginName}UserAccountDataAccessProvider(private val _configuration: ${p
 
     companion object
     {
-        private val _logger: Logger = LoggerFactory.getLogger(${pluginName}CredentialDataAccessProvider::class.java)    
+        private val _logger: Logger = LoggerFactory.getLogger(${pluginName}UserAccountDataAccessProvider::class.java)
     }
 }

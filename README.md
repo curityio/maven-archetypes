@@ -42,7 +42,7 @@ To create a simple authenticator that *does not* use OAuth or OpenID Connect, ru
 $ mvn -B archetype:generate \
       -DarchetypeArtifactId=identityserver.plugins.archetypes.authenticator \
       -DarchetypeGroupId=io.curity \
-      -DarchetypeVersion=3.2.0  \
+      -DarchetypeVersion=4.0.0  \
       -DartifactId=hello-world \
       -DgroupId=com.example.curity \
       -DpluginName=HelloWorld \
@@ -57,7 +57,7 @@ Similarly, to create a skeleton project that uses OAuth or OpenID Connect to aut
 $ mvn -B archetype:generate \
       -DarchetypeArtifactId=identityserver.plugins.archetypes.oauth-authenticator \
       -DarchetypeGroupId=io.curity \
-      -DarchetypeVersion=3.2.0  \
+      -DarchetypeVersion=4.0.0  \
       -DartifactId=hello-world \
       -DgroupId=com.example.curity \
       -DpluginName=HelloWorld \
@@ -73,13 +73,33 @@ E.g. to create the Event Listener plugin, use this command:
 $ mvn -B archetype:generate \
       -DarchetypeArtifactId=identityserver.plugins.archetypes.event-listener \
       -DarchetypeGroupId=io.curity \
-      -DarchetypeVersion=3.2.0 \
+      -DarchetypeVersion=4.0.0 \
       -DartifactId=hello-world \
       -DgroupId=com.example.curity \
       -DpluginName=HelloWorld \
       -Dversion=1.0.0-SNAPSHOT
 
 ```
+
+### Generating Kotlin Plugins
+
+Every archetype comes in two languages — Java and Kotlin. Once you know the `archetypeArtifactId` you can append it with `kotlin-` to generate a Kotlin version of the plugin stub. For example, to create an Event Listener plugin using Kotlin, use this command:
+
+```bash
+$ mvn -B archetype:generate \
+      -DarchetypeArtifactId=identityserver.plugins.archetypes.kotlin-event-listener \
+      -DarchetypeGroupId=io.curity \
+      -DarchetypeVersion=4.0.0 \
+      -DartifactId=hello-world \
+      -DgroupId=com.example.curity \
+      -DpluginName=HelloWorld \
+      -Dversion=1.0.0-SNAPSHOT
+
+```
+
+## Read More
+
+To learn more about writing plugins for the Curity Identity Server, see the [Getting Started with Plugins](https://curity.io/resources/learn/getting-started-plugins/) tutorial.
 
 ## License
 

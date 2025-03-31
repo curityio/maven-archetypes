@@ -4,8 +4,8 @@
 
     <groupId>io.curity</groupId>
     <artifactId>identityserver.plugins.archetypes</artifactId>
-    <version>3.2.0</version>
-    
+    <version>4.0.0</version>
+
     <name>Curity Plug-in Archetypes</name>
     <description>Archetypes that can generate code for the various kinds of plug-ins supported by the Curity Identity Server</description>
     <url>https://github.com/curityio/maven-archetypes</url>
@@ -71,6 +71,8 @@
         <module>kotlin-alarm-handler-archetype</module>
         <module>token-procedure-archetype</module>
         <module>kotlin-token-procedure-archetype</module>
+        <module>application-archetype</module>
+        <module>kotlin-application-archetype</module>
   </modules>
 
     <organization>
@@ -105,7 +107,7 @@
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-gpg-plugin</artifactId>
-                        <version>3.0.1</version>
+                        <version>3.2.7</version>
                         <executions>
                             <execution>
                                 <id>sign-artifacts</id>
@@ -119,7 +121,7 @@
                     <plugin>
                         <groupId>org.sonatype.plugins</groupId>
                         <artifactId>nexus-staging-maven-plugin</artifactId>
-                        <version>1.6.13</version>
+                        <version>1.7.0</version>
                         <extensions>false</extensions>
                         <configuration>
                             <serverId>ossrh</serverId>

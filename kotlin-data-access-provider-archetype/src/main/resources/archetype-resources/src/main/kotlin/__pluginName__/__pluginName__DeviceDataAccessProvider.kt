@@ -80,6 +80,6 @@ class ${pluginName}DeviceDataAccessProvider(private val _configuration: ${plugin
 
     companion object
     {
-        private val _logger: Logger = LoggerFactory.getLogger(${pluginName}CredentialDataAccessProvider::class.java)
+        private val _logger: Logger = LoggerFactory.getLogger(${pluginName}DeviceDataAccessProvider::class.java)
     }
 }

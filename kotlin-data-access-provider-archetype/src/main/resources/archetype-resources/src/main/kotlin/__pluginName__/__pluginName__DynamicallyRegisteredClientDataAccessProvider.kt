@@ -33,6 +33,6 @@ class ${pluginName}DynamicallyRegisteredClientDataAccessProvider(private val _co
 
     companion object
     {
-        private val _logger: Logger = LoggerFactory.getLogger(${pluginName}CredentialDataAccessProvider::class.java)
+        private val _logger: Logger = LoggerFactory.getLogger(${pluginName}DynamicallyRegisteredClientDataAccessProvider::class.java)
     }
 }

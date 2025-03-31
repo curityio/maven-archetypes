@@ -5,7 +5,7 @@ import se.curity.identityserver.sdk.web.Request;
 
 import java.util.function.Function;
 
-class CallbackRequestModel
+public class CallbackRequestModel
 {
     @Nullable
     private final String _error;

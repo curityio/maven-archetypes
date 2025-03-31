@@ -7,7 +7,7 @@ import se.curity.identityserver.sdk.datasource.DynamicallyRegisteredClientDataAc
 
 public final class ${pluginName}DynamicallyRegisteredClientDataAccessProvider implements DynamicallyRegisteredClientDataAccessProvider
 {
-    private static final Logger _logger = LoggerFactory.getLogger(${pluginName}CredentialDataAccessProvider.class);
+    private static final Logger _logger = LoggerFactory.getLogger(${pluginName}DynamicallyRegisteredClientDataAccessProvider.class);
 
     private final ${pluginName}DataAccessProviderConfig _configuration;
 
