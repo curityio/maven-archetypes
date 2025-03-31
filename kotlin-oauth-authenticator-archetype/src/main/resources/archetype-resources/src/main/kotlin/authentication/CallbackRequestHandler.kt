@@ -66,7 +66,7 @@ class CallbackRequestHandler(private val _config: ${pluginName}AuthenticatorPlug
                 SubjectAttributes.of(tokenResponseData["id"].toString(), Attributes.of(subjectAttributes)),
                 ContextAttributes.of(Attributes.of(Attribute.of("access_token", tokenResponseData["access_token"].toString()))))
         val authenticationResult = AuthenticationResult(attributes)
-        return Optional.ofNullable(authenticationResult)
+        return Optional.of(authenticationResult)
     }
 
     private fun redeemCodeForTokens(requestModel: CallbackRequestModel): Map<String, Any>
@@ -142,7 +142,7 @@ class CallbackRequestHandler(private val _config: ${pluginName}AuthenticatorPlug
 
         data.entries.forEach { e -> stringBuilder.appendParameter(e) }
 
-        return HttpRequest.fromString(stringBuilder.toString())
+        return HttpRequest.fromString(stringBuilder.toString(), StandardCharsets.UTF_8)
     }
 
     private fun StringBuilder.appendParameter(entry: Map.Entry<String, String>)

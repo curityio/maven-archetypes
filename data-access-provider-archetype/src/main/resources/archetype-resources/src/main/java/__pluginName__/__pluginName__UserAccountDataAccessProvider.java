@@ -15,7 +15,7 @@ import java.util.Map;
 
 public final class ${pluginName}UserAccountDataAccessProvider implements UserAccountDataAccessProvider
 {
-    private static final Logger _logger = LoggerFactory.getLogger(${pluginName}CredentialDataAccessProvider.class);
+    private static final Logger _logger = LoggerFactory.getLogger(${pluginName}UserAccountDataAccessProvider.class);
 
     private final ${pluginName}DataAccessProviderConfig _configuration;
 

@@ -12,7 +12,7 @@ import java.util.List;
 
 public final class ${pluginName}DeviceDataAccessProvider implements DeviceDataAccessProvider
 {
-    private static final Logger _logger = LoggerFactory.getLogger(${pluginName}CredentialDataAccessProvider.class);
+    private static final Logger _logger = LoggerFactory.getLogger(${pluginName}DeviceDataAccessProvider.class);
 
     private final ${pluginName}DataAccessProviderConfig _configuration;
 

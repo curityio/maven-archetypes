@@ -8,7 +8,7 @@ import java.util.Map;
 
 public final class ${pluginName}BucketDataAccessProvider implements BucketDataAccessProvider
 {
-    private static final Logger _logger = LoggerFactory.getLogger(${pluginName}CredentialDataAccessProvider.class);
+    private static final Logger _logger = LoggerFactory.getLogger(${pluginName}BucketDataAccessProvider.class);
 
     private final ${pluginName}DataAccessProviderConfig _configuration;
 
