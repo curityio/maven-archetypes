@@ -4,7 +4,7 @@
 
     <groupId>io.curity</groupId>
     <artifactId>identityserver.plugins.archetypes</artifactId>
-    <version>4.0.0</version>
+    <version>4.1.0</version>
 
     <name>Curity Plug-in Archetypes</name>
     <description>Archetypes that can generate code for the various kinds of plug-ins supported by the Curity Identity Server</description>
@@ -43,20 +43,25 @@
     </properties>
 
     <modules>
-        <module>authenticator-archetype</module>
-        <module>backchannel-authenticator-archetype</module>
-        <module>oauth-authenticator-archetype</module>
-        <module>kotlin-authenticator-archetype</module>
+        <module>alarm-handler-archetype</module>
+        <module>application-archetype</module>
         <module>authentication-action-archetype</module>
+        <module>authenticator-archetype</module>
         <module>authorization-manager-archetype</module>
-        <module>data-access-provider-archetype</module>
-        <module>sms-sender-archetype</module>
-        <module>email-sender-archetype</module>
-        <module>event-listener-archetype</module>
-        <module>signing-consentor-archetype</module>
+        <module>backchannel-authenticator-archetype</module>
         <module>consentor-archetype</module>
         <module>claims-provider-archetype</module>
+        <module>data-access-provider-archetype</module>
+        <module>email-sender-archetype</module>
+        <module>event-listener-archetype</module>
+        <module>oauth-authenticator-archetype</module>
+        <module>signing-consentor-archetype</module>
+        <module>sms-sender-archetype</module>
+        <module>token-procedure-archetype</module>
+        <module>kotlin-alarm-handler-archetype</module>
+        <module>kotlin-application-archetype</module>
         <module>kotlin-authentication-action-archetype</module>
+        <module>kotlin-authenticator-archetype</module>
         <module>kotlin-authorization-manager-archetype</module>
         <module>kotlin-backchannel-authenticator-archetype</module>
         <module>kotlin-claims-provider-archetype</module>
@@ -64,15 +69,10 @@
         <module>kotlin-data-access-provider-archetype</module>
         <module>kotlin-email-sender-archetype</module>
         <module>kotlin-event-listener-archetype</module>
+        <module>kotlin-oauth-authenticator-archetype</module>
         <module>kotlin-signing-consentor-archetype</module>
         <module>kotlin-sms-sender-archetype</module>
-        <module>kotlin-oauth-authenticator-archetype</module>
-        <module>alarm-handler-archetype</module>
-        <module>kotlin-alarm-handler-archetype</module>
-        <module>token-procedure-archetype</module>
         <module>kotlin-token-procedure-archetype</module>
-        <module>application-archetype</module>
-        <module>kotlin-application-archetype</module>
   </modules>
 
     <organization>

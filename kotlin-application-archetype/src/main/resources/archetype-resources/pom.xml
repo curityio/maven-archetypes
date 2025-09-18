@@ -14,7 +14,7 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.curityVersion>${curitySdkVersion}</project.curityVersion>
-        <kotlin.version>2.0.20</kotlin.version>
+        <kotlin.version>2.2.0</kotlin.version>
         <slf4J.version>2.0.12</slf4J.version>
     </properties>
 
