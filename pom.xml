@@ -55,6 +55,7 @@
         <module>email-sender-archetype</module>
         <module>event-listener-archetype</module>
         <module>oauth-authenticator-archetype</module>
+        <module>saml-attribute-provider-archetype</module>
         <module>signing-consentor-archetype</module>
         <module>sms-sender-archetype</module>
         <module>token-procedure-archetype</module>
@@ -70,6 +71,7 @@
         <module>kotlin-email-sender-archetype</module>
         <module>kotlin-event-listener-archetype</module>
         <module>kotlin-oauth-authenticator-archetype</module>
+        <module>kotlin-saml-attribute-provider-archetype</module>
         <module>kotlin-signing-consentor-archetype</module>
         <module>kotlin-sms-sender-archetype</module>
         <module>kotlin-token-procedure-archetype</module>
