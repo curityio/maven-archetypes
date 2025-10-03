@@ -1,7 +1,7 @@
 ${pluginName} SAML Attribute Provider Plugin
 ============================================
 
-A custom SAML Attribute Provider plugin for the Curity Identity Server.
+A custom SAML Attribute Provider plugin for the Curity Identity Server, to enable retrieval of user attributes to issue to SAML assertions in custom ways.
 
 Building the Plugin
 ~~~~~~~~~~~~~~~~~~~
