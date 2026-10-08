@@ -60,6 +60,7 @@ Some archetypes have extra classes (request models, handlers, templates, message
   sync.
 - All modules share one version, set in the root `pom.xml` and in each module's `<parent>`. Bumping it means updating
   every module POM and the `-DarchetypeVersion` in `README.md`.
+- Ensure that the archetype's pom.xml has a short, appropriate description.
 
 ## Adding a new archetype (checklist)
 
