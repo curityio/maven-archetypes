@@ -2,7 +2,9 @@ package ${package}.${pluginName}
 
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
+import se.curity.identityserver.sdk.data.GetBucketResult
 import se.curity.identityserver.sdk.datasource.BucketDataAccessProvider
+import java.time.Instant
 
 class ${pluginName}BucketDataAccessProvider(private val _configuration: ${pluginName}DataAccessProviderConfig): BucketDataAccessProvider
 {
@@ -12,12 +14,28 @@ class ${pluginName}BucketDataAccessProvider(private val _configuration: ${plugin
         TODO()
     }
 
+    override fun getBucket(subject: String, purpose: String): GetBucketResult
+    {
+        _logger.debug("Getting bucket with subject: {} , purpose : {}", subject, purpose)
+        TODO()
+    }
+
     override fun storeAttributes(subject: String, purpose: String, dataMap: MutableMap<String, Any>): Map<String, Any>
     {
         dataMap["subject"] = subject
         dataMap["purpose"] = purpose
 
         _logger.debug("Storing bucket attributes with subject: {} , purpose : {} and data : {}", subject, purpose, dataMap)
+
+        TODO()
+    }
+
+    override fun storeAttributes(subject: String, purpose: String, dataMap: MutableMap<String, Any>, expires: Instant?): Map<String, Any>
+    {
+        dataMap["subject"] = subject
+        dataMap["purpose"] = purpose
+
+        _logger.debug("Storing bucket attributes with subject: {} , purpose : {} , expires : {} and data : {}", subject, purpose, expires, dataMap)
 
         TODO()
     }

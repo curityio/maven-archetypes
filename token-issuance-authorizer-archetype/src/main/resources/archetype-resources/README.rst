@@ -3,8 +3,6 @@ ${pluginName} Token Issuance Authorizer Plugin
 
 A custom Token Issuance Authorizer plugin for the Curity Identity Server, to decide with custom logic which scopes can be issued in tokens.
 
-Token Issuance Authorizer plugins are supported by the Curity Identity Server version 11.2.0 or newer, but the API is experimental and has changed between versions. The generated code uses the API of version 11.5.0, so it requires that version or newer.
-
 Building the Plugin
 ~~~~~~~~~~~~~~~~~~~
 

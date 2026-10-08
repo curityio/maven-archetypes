@@ -54,14 +54,18 @@ Some archetypes have extra classes (request models, handlers, templates, message
 - Java style: Allman braces (opening brace on its own line), `final` classes, 4-space indentation.
 - Generated POM: Java 21 (`maven-compiler-plugin` 3.14.0, `<source>/<target>` 21). Kotlin: `kotlin-maven-plugin`
   with `kotlin.version` 2.2.0, `<jvmTarget>21</jvmTarget>`, `kotlin-stdlib` in `provided` scope.
-- `curitySdkVersion` default is 10.4.2 in all archetypes, **unless the plugin type requires a newer SDK** (e.g.
-  `password-transformer-archetype` uses 11.5.0 because `PasswordTransformerPluginDescriptor` is `@since 11.5.0`). Always
-  check the `Since:` of the descriptor in the JavaDocs and keep `archetype-metadata.xml` and `archetype.properties` in
-  sync.
+- The Curity SDK version is set once, in the `curity.sdk.version` property of the root `pom.xml`. Archetypes never
+  hard-code it: `archetype-metadata.xml` uses `<defaultValue>${curity.sdk.version}</defaultValue>` for the
+  `curitySdkVersion` property, and the test `archetype.properties` uses `curitySdkVersion=${curity.sdk.version}`. The
+  root `pom.xml` enables Maven resource filtering for exactly these two files. Never widen that filtering to the
+  `archetype-resources` templates, their `${...}` placeholders must stay for the archetype (Velocity) to resolve.
+- After bumping `curity.sdk.version`, run the full `mvn install`: new abstract methods in the SDK break the integration
+  tests of archetypes whose stubs don't implement them.
 - Always implement against the newest available version of the Curity SDK.
 - In the archetype's template README never add information about the minimum Curity SDK version.
 - All modules share one version, set in the root `pom.xml` and in each module's `<parent>`. Bumping it means updating
-  every module POM and the `-DarchetypeVersion` in `README.md`.
+  every module POM and the `-DarchetypeVersion` in `README.md` (e.g. `mvn versions:set -DnewVersion=<ver>
+  -DgenerateBackupPoms=false`, then update `README.md`).
 - Ensure that the archetype's pom.xml has a short, appropriate description.
 
 ## Adding a new archetype (checklist)
@@ -69,14 +73,15 @@ Some archetypes have extra classes (request models, handlers, templates, message
 1. Copy the closest existing archetype (the SAML attribute provider is the smallest, cleanest template).
 2. Rename module dir, `artifactId` (`identityserver.plugins.archetypes.<type>`, `kotlin-<type>` for Kotlin) and `<name>`
    in the module `pom.xml`.
-3. In `archetype-metadata.xml` set `<archetype-descriptor name="<type>-archetype">` (some existing ones wrongly say
-   `claims-provider-archetype` - don't copy that) and the `curitySdkVersion` default.
+3. In `archetype-metadata.xml` set `<archetype-descriptor name="<type>-archetype">`. Keep `<defaultValue>${curity.sdk.version}</defaultValue>` for
+   `curitySdkVersion`.
 4. Write the Java/Kotlin classes against the exact SDK signatures. Verify them against the real jar, e.g.
    `javap -cp ~/.m2/repository/se/curity/identityserver/identityserver.sdk/<ver>/identityserver.sdk-<ver>.jar <class>`.
 5. Rename the `META-INF/services/` file to the fully qualified descriptor interface name; its content is
    `${package}.${pluginName}.${pluginName}<Type>Descriptor`.
 6. Update the generated `README.rst` and `pom.xml` `<name>`.
-7. Update `src/test/resources/projects/basic/archetype.properties` (artifactId, pluginName, curitySdkVersion).
+7. Update `src/test/resources/projects/basic/archetype.properties` (artifactId, pluginName; keep
+   `curitySdkVersion=${curity.sdk.version}`).
 8. Register the module in the root `pom.xml` `<modules>` (Java ones first, then Kotlin ones, alphabetical) and add the
    plugin type to the list in `README.md`.
 9. Do both the Java and the Kotlin variant.
