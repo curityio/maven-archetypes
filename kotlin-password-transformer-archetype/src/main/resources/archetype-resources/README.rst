@@ -3,8 +3,6 @@ ${pluginName} Password Transformer Plugin
 
 A custom Password Transformer plugin for the Curity Identity Server, to enable hashing and verifying passwords with custom algorithms.
 
-Password Transformer plugins are supported by the Curity Identity Server version 11.5.0 or newer.
-
 Building the Plugin
 ~~~~~~~~~~~~~~~~~~~
 
@@ -18,7 +16,7 @@ To install the plugin, copy the compiled JAR and JARs of the dependencies not pr
 Configuring the Plugin
 ~~~~~~~~~~~~~~~~~~~~~~
 
-Create a password transformer that uses one of the algorithms provided by the plugin under ``/facilities/password-transformers/password-transformer``. Then, select that transformer as the algorithm of a credential manager, under ``/processing/credential-managers/credential-manager/password-transformer``.
+Create a password transformer that uses one of the algorithms provided by the plugin under **Facilities** -> **Password Transformers**. Then, select that transformer as the algorithm of a credential manager.
 
 Required Dependencies
 """""""""""""""""""""

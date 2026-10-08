@@ -58,6 +58,8 @@ Some archetypes have extra classes (request models, handlers, templates, message
   `password-transformer-archetype` uses 11.5.0 because `PasswordTransformerPluginDescriptor` is `@since 11.5.0`). Always
   check the `Since:` of the descriptor in the JavaDocs and keep `archetype-metadata.xml` and `archetype.properties` in
   sync.
+- Always implement against the newest available version of the Curity SDK.
+- In the archetype's template README never add information about the minimum Curity SDK version.
 - All modules share one version, set in the root `pom.xml` and in each module's `<parent>`. Bumping it means updating
   every module POM and the `-DarchetypeVersion` in `README.md`.
 - Ensure that the archetype's pom.xml has a short, appropriate description.

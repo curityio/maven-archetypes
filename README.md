@@ -23,6 +23,7 @@ Identity Server. Currently, the following archetypes are available:
 * Password Transformer
 * SAML Attribute Provider
 * SMS Sender
+* Token Issuance Authorizer
 * Token Procedure
 
 All the archetypes are also available in Kotlin version.
