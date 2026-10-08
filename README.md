@@ -20,8 +20,10 @@ Identity Server. Currently, the following archetypes are available:
 * Data Access Provider
 * Email Sender
 * Event Listener
+* Password Transformer
 * SAML Attribute Provider
 * SMS Sender
+* Token Procedure
 
 All the archetypes are also available in Kotlin version.
 

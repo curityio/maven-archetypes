@@ -61,6 +61,7 @@
         <module>email-sender-archetype</module>
         <module>event-listener-archetype</module>
         <module>oauth-authenticator-archetype</module>
+        <module>password-transformer-archetype</module>
         <module>saml-attribute-provider-archetype</module>
         <module>signing-consentor-archetype</module>
         <module>sms-sender-archetype</module>
