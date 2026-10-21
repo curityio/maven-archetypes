@@ -12,6 +12,6 @@
     <artifactId>identityserver.plugins.archetypes.kotlin-event-listener</artifactId>
 
     <packaging>maven-archetype</packaging>
-    <name>Curity Kotlin Event Listener Plugin Archetype</name>
-    <description>An archetype that generates the Kotlin source code necessary to create an event listener plugin.</description>
+    <name>Curity Kotlin Event Listener Archetype</name>
+    <description>An archetype that generates the Kotlin source code necessary to create an event listener plugin for the Curity Identity Server.</description>
 </project>

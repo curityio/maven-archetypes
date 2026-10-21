@@ -12,6 +12,6 @@
     <artifactId>identityserver.plugins.archetypes.kotlin-consentor</artifactId>
 
     <packaging>maven-archetype</packaging>
-    <name>Curity Kotlin Consentor Plugin Archetype</name>
-    <description>An archetype that generates the Kotlin source code necessary to create a consentor plugin.</description>
+    <name>Curity Kotlin Consentor Archetype</name>
+    <description>An archetype that generates the Kotlin source code necessary to create a consentor plugin for the Curity Identity Server.</description>
 </project>

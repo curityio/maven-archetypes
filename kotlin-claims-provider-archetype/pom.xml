@@ -12,6 +12,6 @@
     <artifactId>identityserver.plugins.archetypes.kotlin-claims-provider</artifactId>
 
     <packaging>maven-archetype</packaging>
-    <name>Curity Kotlin Claims Provider Plugin Archetype</name>
-    <description>An archetype that generates the Kotlin source code necessary to create a claims provider plugin.</description>
+    <name>Curity Kotlin Claims Provider Archetype</name>
+    <description>An archetype that generates the Kotlin source code necessary to create a claims provider plugin for the Curity Identity Server.</description>
 </project>

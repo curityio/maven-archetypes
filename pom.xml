@@ -6,7 +6,7 @@
     <artifactId>identityserver.plugins.archetypes</artifactId>
     <version>4.2.0</version>
 
-    <name>Curity Plug-in Archetypes</name>
+    <name>Curity Plugin Archetypes</name>
     <description>Archetypes that can generate code for the various kinds of plugins supported by the Curity Identity Server</description>
     <url>https://github.com/curityio/maven-archetypes</url>
     <licenses>

@@ -12,5 +12,5 @@
 
     <packaging>maven-archetype</packaging>
     <name>Curity Authenticator Archetype</name>
-    <description>An archetype that generates the source code necessary to create an authenticator plugin</description>
+    <description>An archetype that generates the Java source code necessary to create an authenticator plugin for the Curity Identity Server.</description>
 </project>

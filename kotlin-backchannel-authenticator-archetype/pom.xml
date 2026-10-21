@@ -12,5 +12,5 @@
 
     <packaging>maven-archetype</packaging>
     <name>Curity Kotlin Back-channel Authenticator Archetype</name>
-    <description>An archetype that generates the Kotlin source code necessary to create a back-channel authenticator plugin.</description>
+    <description>An archetype that generates the Kotlin source code necessary to create a back-channel authenticator plugin for the Curity Identity Server.</description>
 </project>

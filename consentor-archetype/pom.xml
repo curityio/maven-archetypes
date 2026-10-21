@@ -12,5 +12,6 @@
     <artifactId>identityserver.plugins.archetypes.consentor</artifactId>
 
     <packaging>maven-archetype</packaging>
-    <name>Curity Consentor Plugin Archetype</name>
+    <name>Curity Consentor Archetype</name>
+    <description>An archetype that generates the Java source code necessary to create a consentor plugin for the Curity Identity Server.</description>
 </project>

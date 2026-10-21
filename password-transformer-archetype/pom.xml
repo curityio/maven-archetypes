@@ -12,6 +12,6 @@
     <artifactId>identityserver.plugins.archetypes.password-transformer</artifactId>
 
     <packaging>maven-archetype</packaging>
-    <name>Curity Password Transformer Plugin Archetype</name>
+    <name>Curity Password Transformer Archetype</name>
     <description>An archetype that generates the Java source code necessary to create a password transformer plugin for the Curity Identity Server.</description>
 </project>

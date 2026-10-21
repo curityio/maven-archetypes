@@ -12,5 +12,5 @@
 
     <packaging>maven-archetype</packaging>
     <name>Curity Kotlin OAuth Authenticator Archetype</name>
-    <description>An archetype that generates the Kotlin source code necessary to create an authenticator plugin that communicates with an upstream OAuth or OpenID Connect provider.</description>
+    <description>An archetype that generates the Kotlin source code necessary to create an authenticator plugin for the Curity Identity Server that communicates with an upstream OAuth or OpenID Connect provider.</description>
 </project>
