@@ -11,7 +11,7 @@ Build the plugin by issuing the command ``mvn package``. This will produce a JAR
 Installing the Plugin
 ~~~~~~~~~~~~~~~~~~~~~
 
-To install the plugin, copy the compiled JAR and JARs of the dependencies not provided by the Curity Identity Server from the ``target`` directory into the :file:`${IDSVR_HOME}/usr/share/plugins/${pluginName}`. `${IDSVR_HOME}` is the installation folder of the Curity Identity Server. Inside of a Docker container that uses an official image of the Curity Identity Server, the installation directory is `/opt/idsvr`. Make sure to copy the JARs on each node that run the Curity Identity Server, including the admin node. Restart the Curity Identity Server so that it can load the plugin. For more information about installing plugins, refer to the `curity.io/plugins`_.
+To install the plugin, copy the compiled JAR and JARs of the dependencies not provided by the Curity Identity Server from the ``target`` directory into the :file:`${IDSVR_HOME}/usr/share/plugins/${pluginName}`. `${IDSVR_HOME}` is the installation folder of the Curity Identity Server. Inside of a Docker container that uses an official image of the Curity Identity Server, the installation directory is `/opt/idsvr`. Make sure to copy the JARs on each node that runs the Curity Identity Server, including the admin node. Restart the Curity Identity Server so that it can load the plugin. For more information about installing plugins, refer to the `curity.io/plugins`_.
 
 Configuring the Plugin
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -29,6 +29,6 @@ More Information
 
 Please visit `curity.io`_ for more information about the Curity Identity Server.
 
-.. _curity.io/plugins: https://curity.io/docs/idsvr/latest/developer-guide/plugins/index.html#plugin-installation
+.. _curity.io/plugins: https://curity.io/docs/identity-server/developer-guide/#plugin-installation
 .. _curity.io: https://curity.io/
-.. _the documentation: https://curity.io/docs/idsvr/latest/developer-guide/plugins/index.html#server-provided-dependencies-1
+.. _the documentation: https://curity.io/docs/identity-server/developer-guide/#server-provided-dependencies-1
