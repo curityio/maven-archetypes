@@ -3,7 +3,7 @@
 [![Quality](https://img.shields.io/badge/quality-production-green)](https://curity.io/resources/code-examples/status/)
 [![Availability](https://img.shields.io/badge/availability-binary-blue)](https://curity.io/resources/code-examples/status/)
 
-This project provides Maven archetypes to help you quickly create a skeleton of a plug-in which can be used with the Curity
+This project provides Maven archetypes to help you quickly create a skeleton of a plugin which can be used with the Curity
 Identity Server. Currently, the following archetypes are available:
 
 * Alarms Handler
@@ -20,8 +20,11 @@ Identity Server. Currently, the following archetypes are available:
 * Data Access Provider
 * Email Sender
 * Event Listener
+* Password Transformer
 * SAML Attribute Provider
 * SMS Sender
+* Token Issuance Authorizer
+* Token Procedure
 
 All the archetypes are also available in Kotlin version.
 
@@ -35,7 +38,7 @@ that language.
 
 To install these archetypes, just issue the command `mvn install`.
 
-## Generate a new Plug-in Project
+## Generate a new Plugin Project
 
 To create a simple authenticator that *does not* use OAuth or OpenID Connect, run the following command (after installing the archetypes):
 
@@ -43,7 +46,7 @@ To create a simple authenticator that *does not* use OAuth or OpenID Connect, ru
 $ mvn -B archetype:generate \
       -DarchetypeArtifactId=identityserver.plugins.archetypes.authenticator \
       -DarchetypeGroupId=io.curity \
-      -DarchetypeVersion=4.1.0  \
+      -DarchetypeVersion=4.2.0  \
       -DartifactId=hello-world \
       -DgroupId=com.example.curity \
       -DpluginName=HelloWorld \
@@ -58,7 +61,7 @@ Similarly, to create a skeleton project that uses OAuth or OpenID Connect to aut
 $ mvn -B archetype:generate \
       -DarchetypeArtifactId=identityserver.plugins.archetypes.oauth-authenticator \
       -DarchetypeGroupId=io.curity \
-      -DarchetypeVersion=4.1.0  \
+      -DarchetypeVersion=4.2.0  \
       -DartifactId=hello-world \
       -DgroupId=com.example.curity \
       -DpluginName=HelloWorld \
@@ -74,7 +77,7 @@ E.g. to create the Event Listener plugin, use this command:
 $ mvn -B archetype:generate \
       -DarchetypeArtifactId=identityserver.plugins.archetypes.event-listener \
       -DarchetypeGroupId=io.curity \
-      -DarchetypeVersion=4.1.0 \
+      -DarchetypeVersion=4.2.0 \
       -DartifactId=hello-world \
       -DgroupId=com.example.curity \
       -DpluginName=HelloWorld \
@@ -90,7 +93,7 @@ Every archetype comes in two languages — Java and Kotlin. Once you know the `a
 $ mvn -B archetype:generate \
       -DarchetypeArtifactId=identityserver.plugins.archetypes.kotlin-event-listener \
       -DarchetypeGroupId=io.curity \
-      -DarchetypeVersion=4.1.0 \
+      -DarchetypeVersion=4.2.0 \
       -DartifactId=hello-world \
       -DgroupId=com.example.curity \
       -DpluginName=HelloWorld \
