@@ -17,7 +17,7 @@ Required Dependencies
 """""""""""""""""""""
 
 For a list of the dependencies and their versions, run ``mvn dependency:list``. Ensure that all of these are installed in
-the plugin directory, except for the JARs provided by the Curity Identity Server (you can find the provided dependencies in `the documentation`_). Otherwise, they will not be accessible to this plug-in and run-time errors will result.
+the plugin directory, except for the JARs provided by the Curity Identity Server (you can find the provided dependencies in `the documentation`_). Otherwise, they will not be accessible to this plugin and run-time errors will result.
 
 More Information
 ~~~~~~~~~~~~~~~~

@@ -12,5 +12,5 @@
 
     <packaging>maven-archetype</packaging>
     <name>Curity Back-channel Authenticator Archetype</name>
-    <description>An archetype that generates the source code necessary to create a back-channel authenticator plug-in</description>
+    <description>An archetype that generates the source code necessary to create a back-channel authenticator plugin</description>
 </project>

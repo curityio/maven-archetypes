@@ -3,7 +3,7 @@
 [![Quality](https://img.shields.io/badge/quality-production-green)](https://curity.io/resources/code-examples/status/)
 [![Availability](https://img.shields.io/badge/availability-binary-blue)](https://curity.io/resources/code-examples/status/)
 
-This project provides Maven archetypes to help you quickly create a skeleton of a plug-in which can be used with the Curity
+This project provides Maven archetypes to help you quickly create a skeleton of a plugin which can be used with the Curity
 Identity Server. Currently, the following archetypes are available:
 
 * Alarms Handler
@@ -38,7 +38,7 @@ that language.
 
 To install these archetypes, just issue the command `mvn install`.
 
-## Generate a new Plug-in Project
+## Generate a new Plugin Project
 
 To create a simple authenticator that *does not* use OAuth or OpenID Connect, run the following command (after installing the archetypes):
 

@@ -12,5 +12,5 @@
 
     <packaging>maven-archetype</packaging>
     <name>Curity Kotlin Authenticator Archetype</name>
-    <description>An archetype that generates the Kotlin source code necessary to create an authenticator plug-in.</description>
+    <description>An archetype that generates the Kotlin source code necessary to create an authenticator plugin.</description>
 </project>
