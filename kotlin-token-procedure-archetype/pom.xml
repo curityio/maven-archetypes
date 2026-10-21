@@ -12,6 +12,6 @@
     <artifactId>identityserver.plugins.archetypes.kotlin-token-procedure</artifactId>
 
     <packaging>maven-archetype</packaging>
-    <name>Curity Token Procedure Kotlin Archetype</name>
+    <name>Curity Kotlin Token Procedure Archetype</name>
     <description>An archetype that generates the Kotlin source code necessary to create token procedure plugin for the Curity Identity Server.</description>
 </project>
