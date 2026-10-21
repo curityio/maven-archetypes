@@ -29,7 +29,7 @@ More Information
 
 Please visit `curity.io`_ for more information about the Curity Identity Server.
 
-.. _curity.io/plugins: https://curity.io/docs/identity-server/developer-guide/#plugin-installation
+.. _curity.io/plugins: https://curity.io/docs/identity-server/developer-guide/plugins/#plugin-installation
 .. _curity.io: https://curity.io/
 .. _token issuance authorizers tutorial: https://curity.io/resources/learn/configure-token-issuance-authorizers/
-.. _the documentation: https://curity.io/docs/identity-server/developer-guide/#server-provided-dependencies-1
+.. _the documentation: https://curity.io/docs/identity-server/developer-guide/plugins/#server-provided-dependencies
